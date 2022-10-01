@@ -1,12 +1,12 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Hello World | Hello World</title><meta name="author" content="Jinmu"><meta name="copyright" content="Jinmu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="title:python一， 布尔类型 1， bool()-函数若（）中若为字符串则true；定义为False的对象有None,False,值为零的数字类型，空的序列和集合””,(),{},[],set(),range(0). 2， True&#x3D;&#x3D;1,False&#x3D;&#x3D;0 3， 逻辑运算符and—左边和右边同时为True,，结果为True">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Hello World | Hello World</title><meta name="author" content="Jinmu"><meta name="copyright" content="Jinmu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="title:pythonPython【暂时笔记】基础语法标识符 第一个字符必须是字母表中字母或下划线—— 标识符的其他的部分由字母，数字下划线组成 表示对大小写敏感。 在 Python 3 中，可以用中文作为变量名，非 ASCII 标识符也是允许的了。  关于缩进对于Python，缩进有着实在的语法含义与效果，python中没有{}，而仅以缩进来判断代码的层次逻辑，因此python对代码有着严格">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hello World">
 <meta property="og:url" content="https://jinmu1108.github.io/uncategorized/python/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="title:python一， 布尔类型 1， bool()-函数若（）中若为字符串则true；定义为False的对象有None,False,值为零的数字类型，空的序列和集合””,(),{},[],set(),range(0). 2， True&#x3D;&#x3D;1,False&#x3D;&#x3D;0 3， 逻辑运算符and—左边和右边同时为True,，结果为True">
+<meta property="og:description" content="title:pythonPython【暂时笔记】基础语法标识符 第一个字符必须是字母表中字母或下划线—— 标识符的其他的部分由字母，数字下划线组成 表示对大小写敏感。 在 Python 3 中，可以用中文作为变量名，非 ASCII 标识符也是允许的了。  关于缩进对于Python，缩进有着实在的语法含义与效果，python中没有{}，而仅以缩进来判断代码的层次逻辑，因此python对代码有着严格">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-17T07:15:18.657Z">
-<meta property="article:modified_time" content="2022-09-25T14:53:02.317Z">
+<meta property="article:modified_time" content="2022-09-28T13:40:03.809Z">
 <meta property="article:author" content="Jinmu">
 <meta name="twitter:card" content="summary"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://jinmu1108.github.io/uncategorized/python/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
@@ -50,7 +50,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2022-09-25 22:53:02'
+  postUpdate: '2022-09-28 21:40:03'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -139,10 +139,413 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hello World</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-17T07:15:18.657Z" title="发表于 2022-09-17 15:15:18">2022-09-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-25T14:53:02.317Z" title="更新于 2022-09-25 22:53:02">2022-09-25</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
-<h2 id="title-python"><a href="#title-python" class="headerlink" title="title:python"></a>title:python</h2><p>一，</p>
-<p>布尔类型</p>
-<p>1， bool()-函数若（）中若为字符串则true；定义为False的对象有None,False,值为零的数字类型，空的序列和集合””,(),{},[],set(),range(0).</p>
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hello World</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-17T07:15:18.657Z" title="发表于 2022-09-17 15:15:18">2022-09-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-28T13:40:03.809Z" title="更新于 2022-09-28 21:40:03">2022-09-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h2 id="title-python"><a href="#title-python" class="headerlink" title="title:python"></a>title:python</h2><h2 id="Python【暂时笔记】"><a href="#Python【暂时笔记】" class="headerlink" title="Python【暂时笔记】"></a>Python【暂时笔记】</h2><h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><h3 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h3><ul>
+<li>第一个字符必须是字母表中字母或下划线——</li>
+<li>标识符的其他的部分由字母，数字下划线组成</li>
+<li>表示对大小写敏感。</li>
+<li>在 Python 3 中，可以用中文作为变量名，非 ASCII 标识符也是允许的了。</li>
+</ul>
+<h3 id="关于缩进"><a href="#关于缩进" class="headerlink" title="关于缩进"></a>关于缩进</h3><p>对于Python，缩进有着实在的语法含义与效果，python中没有{}，而仅以缩进来判断代码的层次逻辑，因此python对代码有着严格的缩进要求</p>
+<h3 id="数字类型"><a href="#数字类型" class="headerlink" title="数字类型"></a>数字类型</h3><p>python中数字有四种类型：整数、布尔型、浮点数和复数。</p>
+<ul>
+<li><strong>int</strong> (整数), 如 1, 只有一种整数类型 int，表示为长整型，没有 python2 中的 Long。</li>
+<li><strong>bool</strong> (布尔), 如 True。</li>
+<li><strong>float</strong> (浮点数), 如 1.23、3E-2</li>
+<li><strong>complex</strong> (复数), 如 1 + 2j、 1.1 + 2.2</li>
+</ul>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
+<li>Python 中单引号 <strong>‘</strong> 和双引号 <strong>“</strong> 使用完全相同。</li>
+<li>使用三引号(<strong>‘’’</strong> 或 <strong>“””</strong>)可以指定一个多行字符串。</li>
+<li>转义符 ****。</li>
+<li>反斜杠可以用来转义，使用 <strong>r</strong> 可以让反斜杠不发生转义。 如 <strong>r”this is a line with \n”</strong> 则 <strong>\n</strong> 会显示，并不是换行。</li>
+<li>按字面意义级联字符串，如 <strong>“this “ “is “ “string”</strong> 会被自动转换为 <strong>this is string</strong>。</li>
+<li>字符串可以用 <strong>+</strong> 运算符连接在一起，用 ***** 运算符重复。</li>
+<li>Python 中的字符串有两种索引方式，从左往右以 <strong>0</strong> 开始，从右往左以 <strong>-1</strong> 开始。</li>
+<li>Python 中的字符串不能改变。</li>
+<li>Python 没有单独的字符类型，一个字符就是长度为 1 的字符串。</li>
+<li>字符串的截取的语法格式如下：变量[头下标:尾下标:步长]</li>
+</ul>
+<h3 id="print-输出"><a href="#print-输出" class="headerlink" title="print 输出"></a>print 输出</h3><p><strong>print</strong> 默认输出是换行的，如果要实现不换行需要在变量末尾加上 **end&#x3D;””**：</p>
+<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><h3 id="多个变量赋值"><a href="#多个变量赋值" class="headerlink" title="多个变量赋值"></a>多个变量赋值</h3><p>Python允许你同时为多个变量赋值。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = b = c = 1</span><br></pre></td></tr></table></figure>
+
+<h3 id="标准数据类型"><a href="#标准数据类型" class="headerlink" title="标准数据类型"></a>标准数据类型</h3><p>Python3 中有六个标准的数据类型：</p>
+<ul>
+<li>Number（数字）</li>
+<li>String（字符串）</li>
+<li>List（列表）</li>
+<li>Tuple（元组）</li>
+<li>Set（集合）</li>
+<li>Dictionary（字典）</li>
+</ul>
+<p>Python3 的六个标准数据类型中：</p>
+<ul>
+<li><strong>不可变数据（3 个）：</strong>Number（数字）、String（字符串）、Tuple（元组）；</li>
+<li><strong>可变数据（3 个）：</strong>List（列表）、Dictionary（字典）、Set（集合）。</li>
+</ul>
+<p>isinstance 和 type 的区别在于：</p>
+<ul>
+<li>type()不会认为子类是一种父类类型。</li>
+<li>isinstance()会认为子类是一种父类类型。</li>
+</ul>
+<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><h3 id="Python-数据类型转换可以分为两种："><a href="#Python-数据类型转换可以分为两种：" class="headerlink" title="Python 数据类型转换可以分为两种："></a>Python 数据类型转换可以分为两种：</h3><h4 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h4><p>在隐式类型转换中，Python 会自动将一种数据类型转换为另一种数据类型，不需要我们去干预。</p>
+<p>以下实例中，我们对两种不同类型的数据进行运算，较低数据类型（整数）就会转换为较高数据类型（浮点数）以避免数据丢失。</p>
+<h4 id="显式类型转换"><a href="#显式类型转换" class="headerlink" title="显式类型转换"></a>显式类型转换</h4><p>在显式类型转换中，用户将对象的数据类型转换为所需的数据类型。 我们使用 int()、float()、str() 等预定义函数来执行显式类型转换。</p>
+<ul>
+<li><p>int() 强制转换为整型：</p>
+</li>
+<li><p>float() 强制转换为浮点型：</p>
+</li>
+<li><p>str()强制转换位字符串类型；</p>
+</li>
+<li><p>整型和字符串类型进行运算，就可以用强制类型转换来完成：</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>num_int &#x3D; 123<br>num_str &#x3D; “456”</p>
+<p><strong>print</strong>(“num_int 数据类型为:”,type(num_int))<br><strong>print</strong>(“类型转换前，num_str 数据类型为:”,type(num_str))</p>
+<p>num_str &#x3D; int(num_str)   # 强制转换为整型<br><strong>print</strong>(“类型转换后，num_str 数据类型为:”,type(num_str))</p>
+<p>num_sum &#x3D; num_int + num_str</p>
+<p><strong>print</strong>(“num_int 与 num_str 相加结果为:”,num_sum)<br><strong>print</strong>(“sum 数据类型为:”,type(num_sum))</p>
+<p>以上实例输出结果为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">num_int 数据类型为: &lt;class &#x27;int&#x27;&gt;</span><br><span class="line">类型转换前，num_str 数据类型为: &lt;class &#x27;str&#x27;&gt;</span><br><span class="line">类型转换后，num_str 数据类型为: &lt;class &#x27;int&#x27;&gt;</span><br><span class="line">num_int 与 num_str 相加结果为: 579</span><br><span class="line">sum 数据类型为: &lt;class &#x27;int&#x27;&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Python-推导式"><a href="#Python-推导式" class="headerlink" title="Python 推导式"></a>Python 推导式</h2><ul>
+<li>列表(list)推导式</li>
+<li>字典(dict)推导式</li>
+<li>集合(set)推导式</li>
+<li>元组(tuple)推导式</li>
+</ul>
+<h2 id="解释器"><a href="#解释器" class="headerlink" title="解释器"></a>解释器</h2><p>交互式编程</p>
+<p>脚本式编程</p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h4 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h4><p>以下假设变量 <strong>a&#x3D;10</strong>，变量 <strong>b&#x3D;21</strong>：</p>
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">+</td>
+<td align="left">加 - 两个对象相加</td>
+<td align="left">a + b 输出结果 31</td>
+</tr>
+<tr>
+<td align="left">-</td>
+<td align="left">减 - 得到负数或是一个数减去另一个数</td>
+<td align="left">a - b 输出结果 -11</td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td align="left">乘 - 两个数相乘或是返回一个被重复若干次的字符串</td>
+<td align="left">a * b 输出结果 210</td>
+</tr>
+<tr>
+<td align="left">&#x2F;</td>
+<td align="left">除 - x 除以 y</td>
+<td align="left">b &#x2F; a 输出结果 2.1</td>
+</tr>
+<tr>
+<td align="left">%</td>
+<td align="left">取模 - 返回除法的余数</td>
+<td align="left">b % a 输出结果 1</td>
+</tr>
+<tr>
+<td align="left">**</td>
+<td align="left">幂 - 返回x的y次幂</td>
+<td align="left">a**b 为10的21次方</td>
+</tr>
+<tr>
+<td align="left">&#x2F;&#x2F;</td>
+<td align="left">取整除 - 向下取接近商的整数</td>
+<td align="left"><code>&gt;&gt;&gt; 9//2 4 &gt;&gt;&gt; -9//2 -5</code></td>
+</tr>
+</tbody></table>
+<h4 id="Python比较运算符"><a href="#Python比较运算符" class="headerlink" title="Python比较运算符"></a>Python比较运算符</h4><p>以下假设变量a为10，变量b为20：</p>
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&#x3D;&#x3D;</td>
+<td align="left">等于 - 比较对象是否相等</td>
+<td align="left">(a &#x3D;&#x3D; b) 返回 False。</td>
+</tr>
+<tr>
+<td align="left">!&#x3D;</td>
+<td align="left">不等于 - 比较两个对象是否不相等</td>
+<td align="left">(a !&#x3D; b) 返回 True。</td>
+</tr>
+<tr>
+<td align="left">&gt;</td>
+<td align="left">大于 - 返回x是否大于y</td>
+<td align="left">(a &gt; b) 返回 False。</td>
+</tr>
+<tr>
+<td align="left">&lt;</td>
+<td align="left">小于 - 返回x是否小于y。所有比较运算符返回1表示真，返回0表示假。这分别与特殊的变量True和False等价。注意，这些变量名的大写。</td>
+<td align="left">(a &lt; b) 返回 True。</td>
+</tr>
+<tr>
+<td align="left">&gt;&#x3D;</td>
+<td align="left">大于等于 - 返回x是否大于等于y。</td>
+<td align="left">(a &gt;&#x3D; b) 返回 False。</td>
+</tr>
+<tr>
+<td align="left">&lt;&#x3D;</td>
+<td align="left">小于等于 - 返回x是否小于等于y。</td>
+<td align="left">(a &lt;&#x3D; b) 返回 True。</td>
+</tr>
+</tbody></table>
+<h4 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h4><p>以下假设变量a为10，变量b为20：</p>
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&#x3D;</td>
+<td align="left">简单的赋值运算符</td>
+<td align="left">c &#x3D; a + b 将 a + b 的运算结果赋值为 c</td>
+</tr>
+<tr>
+<td align="left">+&#x3D;</td>
+<td align="left">加法赋值运算符</td>
+<td align="left">c +&#x3D; a 等效于 c &#x3D; c + a</td>
+</tr>
+<tr>
+<td align="left">-&#x3D;</td>
+<td align="left">减法赋值运算符</td>
+<td align="left">c -&#x3D; a 等效于 c &#x3D; c - a</td>
+</tr>
+<tr>
+<td align="left">*&#x3D;</td>
+<td align="left">乘法赋值运算符</td>
+<td align="left">c *&#x3D; a 等效于 c &#x3D; c * a</td>
+</tr>
+<tr>
+<td align="left">&#x2F;&#x3D;</td>
+<td align="left">除法赋值运算符</td>
+<td align="left">c &#x2F;&#x3D; a 等效于 c &#x3D; c &#x2F; a</td>
+</tr>
+<tr>
+<td align="left">%&#x3D;</td>
+<td align="left">取模赋值运算符</td>
+<td align="left">c %&#x3D; a 等效于 c &#x3D; c % a</td>
+</tr>
+<tr>
+<td align="left">**&#x3D;</td>
+<td align="left">幂赋值运算符</td>
+<td align="left">c **&#x3D; a 等效于 c &#x3D; c ** a</td>
+</tr>
+<tr>
+<td align="left">&#x2F;&#x2F;&#x3D;</td>
+<td align="left">取整除赋值运算符</td>
+<td align="left">c &#x2F;&#x2F;&#x3D; a 等效于 c &#x3D; c &#x2F;&#x2F; a</td>
+</tr>
+<tr>
+<td align="left">:&#x3D;</td>
+<td align="left">海象运算符，可在表达式内部为变量赋值。<strong>Python3.8 版本新增运算符</strong>。</td>
+<td align="left">在这个示例中，赋值表达式可以避免调用 len() 两次:<code>if (n := len(a)) &gt; 10:    print(f&quot;List is too long (&#123;n&#125; elements, expected &lt;= 10)&quot;)</code></td>
+</tr>
+</tbody></table>
+<h4 id="Python位运算符"><a href="#Python位运算符" class="headerlink" title="Python位运算符"></a>Python位运算符</h4><table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&amp;</td>
+<td align="left">按位与运算符：参与运算的两个值,如果两个相应位都为1,则该位的结果为1,否则为0</td>
+<td align="left">(a &amp; b) 输出结果 12 ，二进制解释： 0000 1100</td>
+</tr>
+<tr>
+<td align="left">|</td>
+<td align="left">按位或运算符：只要对应的二个二进位有一个为1时，结果位就为1。</td>
+<td align="left">(a | b) 输出结果 61 ，二进制解释： 0011 1101</td>
+</tr>
+<tr>
+<td align="left">^</td>
+<td align="left">按位异或运算符：当两对应的二进位相异时，结果为1</td>
+<td align="left">(a ^ b) 输出结果 49 ，二进制解释： 0011 0001</td>
+</tr>
+<tr>
+<td align="left">~</td>
+<td align="left">按位取反运算符：对数据的每个二进制位取反,即把1变为0,把0变为1。**~x** 类似于 <strong>-x-1</strong></td>
+<td align="left">(~a ) 输出结果 -61 ，二进制解释： 1100 0011， 在一个有符号二进制数的补码形式。</td>
+</tr>
+<tr>
+<td align="left">&lt;&lt;</td>
+<td align="left">左移动运算符：运算数的各二进位全部左移若干位，由”&lt;&lt;”右边的数指定移动的位数，高位丢弃，低位补0。</td>
+<td align="left">a &lt;&lt; 2 输出结果 240 ，二进制解释： 1111 0000</td>
+</tr>
+<tr>
+<td align="left">&gt;&gt;</td>
+<td align="left">右移动运算符：把”&gt;&gt;”左边的运算数的各二进位全部右移若干位，”&gt;&gt;”右边的数指定移动的位数</td>
+<td align="left">a &gt;&gt; 2 输出结果 15 ，二进制解释： 0000 1111</td>
+</tr>
+</tbody></table>
+<h4 id="Python逻辑运算符"><a href="#Python逻辑运算符" class="headerlink" title="Python逻辑运算符"></a>Python逻辑运算符</h4><p>Python语言支持逻辑运算符，以下假设变量 a 为 10, b为 20:</p>
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">逻辑表达式</th>
+<th align="left">描述</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">and</td>
+<td align="left">x and y</td>
+<td align="left">布尔”与” - 如果 x 为 False，x and y 返回 x 的值，否则返回 y 的计算值。</td>
+<td align="left">(a and b) 返回 20。</td>
+</tr>
+<tr>
+<td align="left">or</td>
+<td align="left">x or y</td>
+<td align="left">布尔”或” - 如果 x 是 True，它返回 x 的值，否则它返回 y 的计算值。</td>
+<td align="left">(a or b) 返回 10。</td>
+</tr>
+<tr>
+<td align="left">not</td>
+<td align="left">not x</td>
+<td align="left">布尔”非” - 如果 x 为 True，返回 False 。如果 x 为 False，它返回 True。</td>
+<td align="left">not(a and b) 返回 False</td>
+</tr>
+</tbody></table>
+<h4 id="Python成员运算符"><a href="#Python成员运算符" class="headerlink" title="Python成员运算符"></a>Python成员运算符</h4><p>除了以上的一些运算符之外，Python还支持成员运算符，测试实例中包含了一系列的成员，包括字符串，列表或元组。</p>
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">in</td>
+<td align="left">如果在指定的序列中找到值返回 True，否则返回 False。</td>
+<td align="left">x 在 y 序列中 , 如果 x 在 y 序列中返回 True。</td>
+</tr>
+<tr>
+<td align="left">not in</td>
+<td align="left">如果在指定的序列中没有找到值返回 True，否则返回 False。</td>
+<td align="left">x 不在 y 序列中 , 如果 x 不在 y 序列中返回 True。</td>
+</tr>
+</tbody></table>
+<h4 id="Python身份运算符"><a href="#Python身份运算符" class="headerlink" title="Python身份运算符"></a>Python身份运算符</h4><p>身份运算符用于比较两个对象的存储单元</p>
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">is</td>
+<td align="left">is 是判断两个标识符是不是引用自一个对象</td>
+<td align="left"><strong>x is y</strong>, 类似 <strong>id(x) &#x3D;&#x3D; id(y)</strong> , 如果引用的是同一个对象则返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td align="left">is not</td>
+<td align="left">is not 是判断两个标识符是不是引用自不同对象</td>
+<td align="left"><strong>x is not y</strong> ， 类似 **id(x) !&#x3D; id(y)**。如果引用的不是同一个对象则返回结果 True，否则返回 False。</td>
+</tr>
+</tbody></table>
+<h2 id="Python运算符优先级"><a href="#Python运算符优先级" class="headerlink" title="Python运算符优先级"></a>Python运算符优先级</h2><p>以下表格列出了从最高到最低优先级的所有运算符， 相同单元格内的运算符具有相同优先级。 运算符均指二元运算，除非特别指出。 相同单元格内的运算符从左至右分组（除了幂运算是从右至左分组）：</p>
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>(expressions...)</code>,<code>[expressions...]</code>, <code>&#123;key: value...&#125;</code>, <code>&#123;expressions...&#125;</code></td>
+<td align="left">圆括号的表达式</td>
+</tr>
+<tr>
+<td align="left"><code>x[index]</code>, <code>x[index:index]</code>, <code>x(arguments...)</code>, <code>x.attribute</code></td>
+<td align="left">读取，切片，调用，属性引用</td>
+</tr>
+<tr>
+<td align="left">await x</td>
+<td align="left">await 表达式</td>
+</tr>
+<tr>
+<td align="left"><code>**</code></td>
+<td align="left">乘方(指数)</td>
+</tr>
+<tr>
+<td align="left"><code>+x</code>, <code>-x</code>, <code>~x</code></td>
+<td align="left">正，负，按位非 NOT</td>
+</tr>
+<tr>
+<td align="left"><code>*</code>, <code>@</code>, <code>/</code>, <code>//</code>, <code>%</code></td>
+<td align="left">乘，矩阵乘，除，整除，取余</td>
+</tr>
+<tr>
+<td align="left"><code>+</code>, <code>-</code></td>
+<td align="left">加和减</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;&lt;</code>, <code>&gt;&gt;</code></td>
+<td align="left">移位</td>
+</tr>
+<tr>
+<td align="left"><code>&amp;</code></td>
+<td align="left">按位与 AND</td>
+</tr>
+<tr>
+<td align="left"><code>^</code></td>
+<td align="left">按位异或 XOR</td>
+</tr>
+<tr>
+<td align="left">&#96;</td>
+<td align="left">&#96;</td>
+</tr>
+<tr>
+<td align="left"><code>in,not in, is,is not, &lt;, &lt;=, &gt;, &gt;=, !=, ==</code></td>
+<td align="left">比较运算，包括成员检测和标识号检测</td>
+</tr>
+<tr>
+<td align="left"><code>not x</code></td>
+<td align="left">逻辑非 NOT</td>
+</tr>
+<tr>
+<td align="left"><code>and</code></td>
+<td align="left">逻辑与 AND</td>
+</tr>
+<tr>
+<td align="left"><code>or</code></td>
+<td align="left">逻辑或 OR</td>
+</tr>
+<tr>
+<td align="left"><code>if -- else</code></td>
+<td align="left">条件表达式</td>
+</tr>
+<tr>
+<td align="left"><code>lambda</code></td>
+<td align="left">lambda 表达式</td>
+</tr>
+<tr>
+<td align="left"><code>:=</code></td>
+<td align="left">赋值表达式</td>
+</tr>
+</tbody></table>
+<h1 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h1><p>1， bool()-函数若（）中若为字符串则true；定义为False的对象有None,False,值为零的数字类型，空的序列和集合””,(),{},[],set(),range(0).</p>
 <p>2， True&#x3D;&#x3D;1,False&#x3D;&#x3D;0</p>
 <p>3， 逻辑运算符and—左边和右边同时为True,，结果为True                        or—左边或右边其中一个为True,结果为true                             not—如果操作数为True,结果为False,如果操作数为False,结果为True</p>
 <p>4， <img src="C:/Users/29506/AppData/Local/Temp/msohtmlclip1/01/clip_image001.png" alt="img">短路逻辑的核心思想：从左往右，只有当第一个操作数的值无法确定逻辑运算的结果时，才对第二个操作数进行求值~~~(not 1) or (0 and 1) or (3 and 4) or (5 and 6) or (7 and 8 and 9)&#x3D;&#x3D;False or 0 or 4 or 6 or 9—False,0都无法确定逻辑运算一直到4才能确定，输出4</p>
@@ -159,8 +562,7 @@
 <p>​    print(“错喽”)</p>
 <p>print(“不玩啦，睡觉”)</p>
 <p><img src="C:/Users/29506/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png" alt="img"></p>
-<p>分支和循环</p>
-<p>1， 判断一个条件，如果这个条件成立，就执行其包含的某条语句或某个代码块2,如果条件不成立，就执行另外的某条语句或代码块。</p>
+<h1 id="分支和循环"><a href="#分支和循环" class="headerlink" title="分支和循环"></a>分支和循环</h1><p>1， 判断一个条件，如果这个条件成立，就执行其包含的某条语句或某个代码块2,如果条件不成立，就执行另外的某条语句或代码块。</p>
 <p>if condition：</p>
 <p> Statement(s)</p>
 <p>Else:</p>
@@ -178,7 +580,7 @@
 <p>3，     访问嵌套列表is(检验两个变量，是否指向同一个对象) B&#x3D;[[0]*3]*3对于内嵌的列表<img src="C:/Users/29506/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg" alt="img"></p>
 <p>{对于内嵌的列表，只是拷贝了对其的引用，而非真正的对其进行物理上的拷贝}</p>
 <p>4， 变量不是盒子？（变量是一个名字，标签，通过这个变量就可以找到一个数据\当赋值运算发生的时候，Python并不是将数据放到变量里边去，而是将数据与变量进行挂钩，这个行为称之为引用。）</p>
-<p>5， 浅拷贝——<img src="C:/Users/29506/AppData/Local/Temp/msohtmlclip1/01/clip_image005.png" alt="img"></p>
+<p>5， 浅拷贝——</p>
 <p>6， 深拷贝——x&#x3D;[1,2,3] y&#x3D;copy.deepcopy(x)—–copy是模块deepcopy是函数</p>
 <p>7， 列表推导式matrix二维列表</p>
 <h1 id="元组"><a href="#元组" class="headerlink" title="元组()"></a>元组()</h1><p> 元组只需要用逗号隔开就可以了，</p>
@@ -187,4 +589,92 @@
 <p>元组—-逗号</p>
 <p>一次性赋值给参量名的行为称为解包</p>
 <p>列表中的元素可以进行任意修改，而元组中的元素无法修改，</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://jinmu1108.github.io">Jinmu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://jinmu1108.github.io/uncategorized/python/">https://jinmu1108.github.io/uncategorized/python/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://jinmu1108.github.io" target="_blank">Hello World</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/uncategorized/C%E9%94%99%E9%A2%98/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/uncategorized/Web/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jinmu</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-python"><span class="toc-number">1.</span> <span class="toc-text">title:python</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%83%E7%BB%84"><span class="toc-number"></span> <span class="toc-text">元组()</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/uncategorized/%E8%AF%AD%E8%A8%80/" title="无题"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/uncategorized/%E8%AF%AD%E8%A8%80/" title="无题">无题</a><time datetime="2022-09-25T14:51:45.836Z" title="发表于 2022-09-25 22:51:45">2022-09-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E4%B8%80%E7%BA%A7%E5%88%86%E7%B1%BB/C%E8%AF%AD%E8%A8%80%20(copy)/" title="C语言"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言"/></a><div class="content"><a class="title" href="/%E4%B8%80%E7%BA%A7%E5%88%86%E7%B1%BB/C%E8%AF%AD%E8%A8%80%20(copy)/" title="C语言">C语言</a><time datetime="2022-09-25T14:51:38.093Z" title="发表于 2022-09-25 22:51:38">2022-09-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/uncategorized/%E7%BD%91%E7%BB%9C%E8%BF%90%E7%BB%B4/" title="无题"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/uncategorized/%E7%BD%91%E7%BB%9C%E8%BF%90%E7%BB%B4/" title="无题">无题</a><time datetime="2022-09-25T11:27:51.465Z" title="发表于 2022-09-25 19:27:51">2022-09-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/uncategorized/C%E8%AF%AD%E8%A8%80%E6%A0%87%E5%87%86%E5%BA%93/" title="无题"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/uncategorized/C%E8%AF%AD%E8%A8%80%E6%A0%87%E5%87%86%E5%BA%93/" title="无题">无题</a><time datetime="2022-09-24T00:58:18.168Z" title="发表于 2022-09-24 08:58:18">2022-09-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/uncategorized/C%E5%B0%8F%E7%9F%A5%E8%AF%86/" title="无题"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/uncategorized/C%E5%B0%8F%E7%9F%A5%E8%AF%86/" title="无题">无题</a><time datetime="2022-09-23T09:04:33.200Z" title="发表于 2022-09-23 17:04:33">2022-09-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Jinmu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+<h1 id="字符串-1"><a href="#字符串-1" class="headerlink" title="字符串"></a>字符串</h1><h2 id="关于大小写"><a href="#关于大小写" class="headerlink" title="关于大小写"></a>关于大小写</h2><h3 id="capitalize"><a href="#capitalize" class="headerlink" title="capitalize()"></a>capitalize()</h3><p>将<strong>字符串</strong>开头字母变为大写，<strong>其余</strong>变为小写</p>
+<h3 id="casefold"><a href="#casefold" class="headerlink" title="casefold"></a>casefold</h3><p>返回一个所有字母都是小写的新字符串。(可以处理英语之外其他语言)</p>
+<h3 id="title"><a href="#title" class="headerlink" title="title"></a>title</h3><p>将每个单词的开头变为大写，其它字母变为小写。</p>
+<h3 id="swapcase"><a href="#swapcase" class="headerlink" title="swapcase"></a>swapcase</h3><p>将其中的大小写反转。</p>
+<h3 id="upper"><a href="#upper" class="headerlink" title="upper"></a>upper</h3><p>将所有字母大写。</p>
+<h3 id="lower"><a href="#lower" class="headerlink" title="lower"></a>lower</h3><p>将所有字母变为小写。（只能处理英文字母）</p>
+<h2 id="关于左右对齐"><a href="#关于左右对齐" class="headerlink" title="关于左右对齐"></a>关于左右对齐</h2><h3 id="center-width-fillchar-x3D-’’"><a href="#center-width-fillchar-x3D-’’" class="headerlink" title="center(width,fillchar&#x3D;’’)"></a>center(width,fillchar&#x3D;’’)</h3><p>如果大于源字符串个数，就会在中间对其</p>
+<h3 id="ljust-width-fillchar-x3D-’’"><a href="#ljust-width-fillchar-x3D-’’" class="headerlink" title="ljust(width,fillchar&#x3D;’’)"></a>ljust(width,fillchar&#x3D;’’)</h3><p>向左对齐</p>
+<h3 id="rjust-width-fillchar-x3D-’’"><a href="#rjust-width-fillchar-x3D-’’" class="headerlink" title="rjust(width,fillchar&#x3D;’’)"></a>rjust(width,fillchar&#x3D;’’)</h3><p>向右对齐</p>
+<h3 id="zfill-width"><a href="#zfill-width" class="headerlink" title="zfill(width)"></a>zfill(width)</h3><p>向右对齐并填充0</p>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h3 id="count-sub-start-end"><a href="#count-sub-start-end" class="headerlink" title="count(sub[,start[,end]])"></a>count(sub[,start[,end]])</h3><p>查找(指定的起始和结束位置)某字符出现次数。</p>
+<h3 id="find（sub-start-end"><a href="#find（sub-start-end" class="headerlink" title="find（sub[,start[,end]]"></a>find（sub[,start[,end]]</h3><p>从左往右找子字符串中的索引下标值</p>
+<h3 id="rfind-sub-start-end"><a href="#rfind-sub-start-end" class="headerlink" title="rfind(sub[,start[,end]])"></a>rfind(sub[,start[,end]])</h3><p>从右往左找子字符串中的索引下标值</p>
+<h3 id="index-sub-start-end"><a href="#index-sub-start-end" class="headerlink" title="index(sub[,start[,end]])"></a>index(sub[,start[,end]])</h3><h3 id="rindex-sub-start-end"><a href="#rindex-sub-start-end" class="headerlink" title="rindex(sub[,start[,end]])"></a>rindex(sub[,start[,end]])</h3><h2 id="字符串和元组共同点"><a href="#字符串和元组共同点" class="headerlink" title="字符串和元组共同点"></a>字符串和元组共同点</h2><ul>
+<li>都可以通过索引来获取每一个元素</li>
+<li>第一个索引值都是0</li>
+<li>都可以通过切片的方法获取一个范围内元素的集合</li>
+<li>都有很多共同的运算符</li>
+</ul>
+<h1 id="序列-（列表，元组和字符串）"><a href="#序列-（列表，元组和字符串）" class="headerlink" title="序列 （列表，元组和字符串）"></a>序列 （列表，元组和字符串）</h1><ul>
+<li>可变序列：列表</li>
+<li>不可表序列：元组，字符串</li>
+</ul>
+<h2 id="对象的基本属性唯一标准，类型，值"><a href="#对象的基本属性唯一标准，类型，值" class="headerlink" title="对象的基本属性唯一标准，类型，值"></a>对象的基本属性唯一标准，类型，值</h2><h2 id="in和not-in"><a href="#in和not-in" class="headerlink" title="in和not in"></a>in和not in</h2><p>判断字符串中有无指定对象</p>
+<h2 id="del"><a href="#del" class="headerlink" title="del"></a>del</h2><p>删除对象</p>
+<p>y&#x3D;[1,2,3,4]</p>
+<p>del y-&gt;y没了</p>
+<p>del y[:]-&gt;[]</p>
+<h2 id="列表，元组和字符串相互转换的函数"><a href="#列表，元组和字符串相互转换的函数" class="headerlink" title="列表，元组和字符串相互转换的函数"></a>列表，元组和字符串相互转换的函数</h2><h3 id="list"><a href="#list" class="headerlink" title="list()"></a>list()</h3><p>将可迭代对象变为列表</p>
+<h3 id="tuple"><a href="#tuple" class="headerlink" title="tuple()"></a>tuple()</h3><p>将可迭代对象变为元组</p>
+<h3 id="str"><a href="#str" class="headerlink" title="str()"></a>str()</h3><p>将可迭代对象变为字符串</p>
+<h2 id="计算函数"><a href="#计算函数" class="headerlink" title="计算函数"></a>计算函数</h2><h3 id="min-amp-max最小值最大值比较"><a href="#min-amp-max最小值最大值比较" class="headerlink" title="min&amp;max最小值最大值比较"></a>min&amp;max最小值最大值比较</h3><p>t &#x3D; []</p>
+<p>min(max,default&#x3D;”啥都没有”)</p>
+<p>啥都没有</p>
+<h3 id="sum"><a href="#sum" class="headerlink" title="sum"></a>sum</h3><p>s &#x3D; [1,2,5,4,7]<br>sum(s)<br>19<br>sum(s,start&#x3D;100)<br>119</p>
+<h3 id="len"><a href="#len" class="headerlink" title="len"></a>len</h3><p>len(range(2 ))<br>2<br>len(range(2 ** 10))<br>1024</p>
+<p>对于32平台来说len中的最大值2^31-1   ,64平台2^63-1</p>
+<h3 id="sorted"><a href="#sorted" class="headerlink" title="sorted()"></a>sorted()</h3><p>由小到大排序</p>
+<p>t &#x3D; [“Apo”,”Boo”,”Ban”,”Pen”,”Fffs”]<br>sorted(t)<br>[‘Apo’, ‘Ban’, ‘Boo’, ‘Fffs’, ‘Pen’]<br>sorted(t,key&#x3D;len)&#x2F;*比较的是每个字符串的长度<br>[‘Apo’,”Pen” ‘Book’, ‘Banan’, ‘’, ‘Fffs’]</p>
+<h3 id="reversed"><a href="#reversed" class="headerlink" title="reversed"></a>reversed</h3><p>倒叙排列           </p>
+<p>s &#x3D; [1,2,5,8,0]<br>reversed(s)<br>&lt;list_reverseiterator object at 0x0000023F8CE32830&gt;<br>list(reversed(s))<br>[0, 8, 5, 2, 1]</p>
+<h3 id="enumerate"><a href="#enumerate" class="headerlink" title="enumerate()"></a>enumerate()</h3><p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/QQ%E5%9B%BE%E7%89%8720220928180854.png" alt="QQ图片20220928180854"></p>
+<p>直接enumerate()会出现一个枚举对象</p>
+<p>list(enumerate())就能看到它长什么样</p>
+<h3 id="zip"><a href="#zip" class="headerlink" title="zip()"></a>zip()<img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/QQ%E5%9B%BE%E7%89%8720220928181945.png" alt="QQ图片20220928181945"></h3><p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/QQ%E5%9B%BE%E7%89%8720220928182224.png" alt="QQ图片20220928182224"></p>
+<p>当每个参数的个数或字符串长度不同时可以用zip_longgest</p>
+<h3 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h3><p>  <img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/QQ%E5%9B%BE%E7%89%8720220928182721.png" alt="QQ图片20220928182721"></p>
+<p>map(ord,参数)</p>
+<p>可输出编码值</p>
+<p>map（pow,参数）</p>
+<p>可输出对应的数字的幂次方</p>
+<h3 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h3><h3 id="iter"><a href="#iter" class="headerlink" title="iter()"></a>iter()</h3><p>生成一个迭代器</p>
+<h2 id="迭代器-amp-可迭代对象"><a href="#迭代器-amp-可迭代对象" class="headerlink" title="迭代器&amp;可迭代对象"></a>迭代器&amp;可迭代对象</h2><h3 id="一个迭代器肯定是一个可迭代对象"><a href="#一个迭代器肯定是一个可迭代对象" class="headerlink" title="一个迭代器肯定是一个可迭代对象"></a>一个迭代器肯定是一个可迭代对象</h3><h3 id="可迭代对象可以一直用，迭代器只能用一次"><a href="#可迭代对象可以一直用，迭代器只能用一次" class="headerlink" title="可迭代对象可以一直用，迭代器只能用一次"></a>可迭代对象可以一直用，迭代器只能用一次</h3><h3 id="可迭代对象"><a href="#可迭代对象" class="headerlink" title="可迭代对象"></a>可迭代对象</h3><p>Python中可迭代对象(Iterable)并不是指某种具体的数据类型，它是指存储了元素的一个容器对象，且容器中的元素可以通过__iter__( )方法或__getitem__( )方法访问。</p>
+<p>常见的可迭代对象包括：<br>a) 集合数据类型，如list、tuple、dict、set、str等；<br>b) 生成器(generator)，包括生成器和带yield的生成器函数(generator function)</p>
+<p>如何判断一个对象是可迭代对象呢？可以通过collections模块的Iterable类型判断，具体判断方法如下：<br>from collections import Iterable #导入Iterable 模块<br>isinstance(变量, Iterable) #判断一个变量是否为可迭代对象返回True表明是可迭代对象<br>————————————————<br>版权声明：本文为CSDN博主「LaoYuanPython」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/laoyuanpython/article/details/94361908">https://blog.csdn.net/laoyuanpython/article/details/94361908</a></p>
+<p>异常是可控的，而错误是不可控的</p>
+<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><h3 id="摩斯密码"><a href="#摩斯密码" class="headerlink" title="摩斯密码"></a>摩斯密码</h3><p>c_table &#x3D; [“.-“,”-…”,”-.-“,”-..”,”.”,”..-“,<br>           “–.”,”….”,”..”,”.—“,”.-..”,<br>           “–”,”-.”,”—“,”.–.”,”.–”,”-..-“,<br>           “-.–”,”–..”,”.—-“,”..—“,”…–”,”….-“,<br>           “…..”,”-….”,”–…”,”—..”,”—-.”,”——“]<br>d_table &#x3D; [“A”,”B”,”C”,”D”,”E”,”F”,<br>           “G”,”H”,”I”,”J”,”K”,”L”,<br>           “M”,”N”,”O”,”P”,”Q”,”R”,<br>           “S”,”T”,”U”,”V”,”W”,”X”,<br>           “Y”,”Z”,”1”,”2”,”3”,”4”,<br>           “5”,”6”,”7”,”8”,”9”,”0”]<br>code &#x3D; input(“请输入摩斯密码：”)<br>split_code &#x3D; code.split(“”)</p>
+<p>result &#x3D; [d_table[c_table.index(each)] for each in split_code]<br>print(result)</p>
+<p>#摩斯密码对比表<br>c_table &#x3D; {“.-“:”A”,”-…”:”B”,”-.-“:”C”,”-..”:” D”,<br>           “.”:”E”,”..-“:”F”,”–.”:”G”,”….”:”H”,<br>           “..”:”I”,”.—“:”J”,”.-..”:”K”,”.-..”:”L”,<br>           “–”:”M”,”-.”:”N”,”—“:”O”,”.–.”:”P”,<br>           “-.–”:”Q”,”.-.”:”R”,”…”:”S”,”-“:”T”,<br>           “..-“:”U”,”–..”:”V”,”.–”:”W”,”-..-“:”X”,<br>           “-.–”:”Y”,”–..”:”Z”,”.—-“:”1”,”..—“:”2”,<br>           “…–”:”3”,”….-“:”4”,”…..”:”5”,”-….”:”6”,<br>           “–…”:”7”,”—..”:”8”,”—-.”:”9”,”——“:”0”}<br>code &#x3D; input(“请输入摩斯密码：”)<br>split_code &#x3D; code.split(“ “)<br>result &#x3D; [c_table[each] for each in split_code]<br>print(result)</p>
+<h3 id="创建字典"><a href="#创建字典" class="headerlink" title="创建字典"></a>创建字典</h3><p>直接使用{}：</p>
+<p>a&#x3D; {”吕布“：”口口布“，”关羽“:”关羽羽”}</p>
+<p>使用dict函数</p>
+<p>b &#x3D; dice(吕布&#x3D;“口口布”，关羽&#x3D;“关羽羽”)</p>
+<p>使用列表作为参数</p>
+<p>c &#x3D; dict([（“吕布”，“口口布”），（“关羽”，“关习习”）])</p>
+<p>将第一种方法作为参数传给dict</p>
+<p>d &#x3D; dict({”吕布“：”口口布“，”关羽“:”关羽羽”})</p>
+<p>e &#x3D; dict({”吕布“：”口口布“，”关羽“:”关羽羽”},liubei&#x3D;”六宝宝”)</p>
+<p>f &#x3D; dict(zip([“吕布”，“guanyu”],[“口口布”，“关习习”]))</p>
+<p>如果都有liubei&#x2F;六宝宝。。。。输入</p>
+<p>a &#x3D;&#x3D; b &#x3D;&#x3D; c &#x3D;&#x3D;d &#x3D;&#x3D; e &#x3D;&#x3D; f</p>
+<p>Ture</p>
+<h3 id="快速初始化一个字典"><a href="#快速初始化一个字典" class="headerlink" title="快速初始化一个字典"></a>快速初始化一个字典</h3><h4 id="增"><a href="#增" class="headerlink" title="增"></a>增</h4><p>d &#x3D; dict.fromkeys(“FishC”,250)<br>d<br>{‘F’: 250, ‘i’: 250, ‘s’: 250, ‘h’: 250, ‘C’: 250}</p>
+<p>加入一个值</p>
+<p>d &#x3D; [‘F’] &#x3D; 70</p>
+<p>d</p>
+<p>{‘F’: 250, ‘i’: 250, ‘s’: 250, ‘h’: 250, ‘C’: 250, ‘f’: 70}</p>
+<h4 id="删"><a href="#删" class="headerlink" title="删"></a>删</h4><p>d.pop(“s”)<br>250<br>d<br>{‘F’: 250, ‘i’: 250, ‘h’: 250, ‘C’: 250, ‘f’: 70}</p>
+<p>若值不存在</p>
+<p>d.po(“v”)<br>Traceback (most recent call last):<br>  File “&lt;pyshell#8&gt;”, line 1, in <module><br>    d.po(“v”)<br>AttributeError: ‘dict’ object has no attribute ‘po’. Did you mean: ‘pop’?<br>d.pop(“v”,”没有”)<br>‘没有’</p>
+<p>用del单独删除i</p>
+<p>del d[“i”]<br>d<br>{‘F’: 250, ‘h’: 250, ‘C’: 250, ‘f’: 70}</p>
+<p>删除整个字典</p>
+<p>d</p>
+<p>del d</p>
+<p>d<br>Traceback (most recent call last):<br>  File “&lt;pyshell#14&gt;”, line 1, in <module><br>    d<br>NameError: name ‘d’ is not defined. Did you mean: ‘id’?</p>
+<p>用clear（）清空字典</p>
+<p>d &#x3D; dict.fromkeys(“FishC”,250)<br>d.clear()<br>d<br>{}&#x2F;<em>d就变成了空字典</em>&#x2F;</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://jinmu1108.github.io">Jinmu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://jinmu1108.github.io/uncategorized/python/">https://jinmu1108.github.io/uncategorized/python/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://jinmu1108.github.io" target="_blank">Hello World</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/uncategorized/C%E9%94%99%E9%A2%98/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/uncategorized/Web/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jinmu</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-python"><span class="toc-number">1.</span> <span class="toc-text">title:python</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python%E3%80%90%E6%9A%82%E6%97%B6%E7%AC%94%E8%AE%B0%E3%80%91"><span class="toc-number">2.</span> <span class="toc-text">Python【暂时笔记】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="toc-number">3.1.</span> <span class="toc-text">标识符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E7%BC%A9%E8%BF%9B"><span class="toc-number">3.2.</span> <span class="toc-text">关于缩进</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.3.</span> <span class="toc-text">数字类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">3.4.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#print-%E8%BE%93%E5%87%BA"><span class="toc-number">3.5.</span> <span class="toc-text">print 输出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC"><span class="toc-number">4.1.</span> <span class="toc-text">多个变量赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.2.</span> <span class="toc-text">标准数据类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.</span> <span class="toc-text">数据类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Python-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%8F%AF%E4%BB%A5%E5%88%86%E4%B8%BA%E4%B8%A4%E7%A7%8D%EF%BC%9A"><span class="toc-number">5.1.</span> <span class="toc-text">Python 数据类型转换可以分为两种：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.1.1.</span> <span class="toc-text">隐式类型转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.1.2.</span> <span class="toc-text">显式类型转换</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">6.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text">Python 推导式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E5%99%A8"><span class="toc-number">8.</span> <span class="toc-text">解释器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">9.</span> <span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">9.0.1.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">9.0.2.</span> <span class="toc-text">Python比较运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">9.0.3.</span> <span class="toc-text">赋值运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">9.0.4.</span> <span class="toc-text">Python位运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">9.0.5.</span> <span class="toc-text">Python逻辑运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python%E6%88%90%E5%91%98%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">9.0.6.</span> <span class="toc-text">Python成员运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python%E8%BA%AB%E4%BB%BD%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">9.0.7.</span> <span class="toc-text">Python身份运算符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">10.</span> <span class="toc-text">Python运算符优先级</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number"></span> <span class="toc-text">布尔类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E5%92%8C%E5%BE%AA%E7%8E%AF"><span class="toc-number"></span> <span class="toc-text">分支和循环</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%83%E7%BB%84"><span class="toc-number"></span> <span class="toc-text">元组()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2-1"><span class="toc-number"></span> <span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%A4%A7%E5%B0%8F%E5%86%99"><span class="toc-number">1.</span> <span class="toc-text">关于大小写</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#capitalize"><span class="toc-number">1.1.</span> <span class="toc-text">capitalize()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#casefold"><span class="toc-number">1.2.</span> <span class="toc-text">casefold</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#title"><span class="toc-number">1.3.</span> <span class="toc-text">title</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#swapcase"><span class="toc-number">1.4.</span> <span class="toc-text">swapcase</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upper"><span class="toc-number">1.5.</span> <span class="toc-text">upper</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lower"><span class="toc-number">1.6.</span> <span class="toc-text">lower</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%B7%A6%E5%8F%B3%E5%AF%B9%E9%BD%90"><span class="toc-number">2.</span> <span class="toc-text">关于左右对齐</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#center-width-fillchar-x3D-%E2%80%99%E2%80%99"><span class="toc-number">2.1.</span> <span class="toc-text">center(width,fillchar&#x3D;’’)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ljust-width-fillchar-x3D-%E2%80%99%E2%80%99"><span class="toc-number">2.2.</span> <span class="toc-text">ljust(width,fillchar&#x3D;’’)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rjust-width-fillchar-x3D-%E2%80%99%E2%80%99"><span class="toc-number">2.3.</span> <span class="toc-text">rjust(width,fillchar&#x3D;’’)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zfill-width"><span class="toc-number">2.4.</span> <span class="toc-text">zfill(width)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE"><span class="toc-number">3.</span> <span class="toc-text">查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#count-sub-start-end"><span class="toc-number">3.1.</span> <span class="toc-text">count(sub[,start[,end]])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#find%EF%BC%88sub-start-end"><span class="toc-number">3.2.</span> <span class="toc-text">find（sub[,start[,end]]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rfind-sub-start-end"><span class="toc-number">3.3.</span> <span class="toc-text">rfind(sub[,start[,end]])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#index-sub-start-end"><span class="toc-number">3.4.</span> <span class="toc-text">index(sub[,start[,end]])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rindex-sub-start-end"><span class="toc-number">3.5.</span> <span class="toc-text">rindex(sub[,start[,end]])</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%85%83%E7%BB%84%E5%85%B1%E5%90%8C%E7%82%B9"><span class="toc-number">4.</span> <span class="toc-text">字符串和元组共同点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%8F%E5%88%97-%EF%BC%88%E5%88%97%E8%A1%A8%EF%BC%8C%E5%85%83%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89"><span class="toc-number"></span> <span class="toc-text">序列 （列表，元组和字符串）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%B1%9E%E6%80%A7%E5%94%AF%E4%B8%80%E6%A0%87%E5%87%86%EF%BC%8C%E7%B1%BB%E5%9E%8B%EF%BC%8C%E5%80%BC"><span class="toc-number">1.</span> <span class="toc-text">对象的基本属性唯一标准，类型，值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#in%E5%92%8Cnot-in"><span class="toc-number">2.</span> <span class="toc-text">in和not in</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#del"><span class="toc-number">3.</span> <span class="toc-text">del</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%EF%BC%8C%E5%85%83%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-number">4.</span> <span class="toc-text">列表，元组和字符串相互转换的函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#list"><span class="toc-number">4.1.</span> <span class="toc-text">list()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tuple"><span class="toc-number">4.2.</span> <span class="toc-text">tuple()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#str"><span class="toc-number">4.3.</span> <span class="toc-text">str()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%87%BD%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text">计算函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#min-amp-max%E6%9C%80%E5%B0%8F%E5%80%BC%E6%9C%80%E5%A4%A7%E5%80%BC%E6%AF%94%E8%BE%83"><span class="toc-number">5.1.</span> <span class="toc-text">min&amp;max最小值最大值比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sum"><span class="toc-number">5.2.</span> <span class="toc-text">sum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#len"><span class="toc-number">5.3.</span> <span class="toc-text">len</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sorted"><span class="toc-number">5.4.</span> <span class="toc-text">sorted()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reversed"><span class="toc-number">5.5.</span> <span class="toc-text">reversed</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#enumerate"><span class="toc-number">5.6.</span> <span class="toc-text">enumerate()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zip"><span class="toc-number">5.7.</span> <span class="toc-text">zip()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#map"><span class="toc-number">5.8.</span> <span class="toc-text">map()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#filter"><span class="toc-number">5.9.</span> <span class="toc-text">filter()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iter"><span class="toc-number">5.10.</span> <span class="toc-text">iter()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8-amp-%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1"><span class="toc-number">6.</span> <span class="toc-text">迭代器&amp;可迭代对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E8%BF%AD%E4%BB%A3%E5%99%A8%E8%82%AF%E5%AE%9A%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1"><span class="toc-number">6.1.</span> <span class="toc-text">一个迭代器肯定是一个可迭代对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1%E5%8F%AF%E4%BB%A5%E4%B8%80%E7%9B%B4%E7%94%A8%EF%BC%8C%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%8F%AA%E8%83%BD%E7%94%A8%E4%B8%80%E6%AC%A1"><span class="toc-number">6.2.</span> <span class="toc-text">可迭代对象可以一直用，迭代器只能用一次</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1"><span class="toc-number">6.3.</span> <span class="toc-text">可迭代对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E5%85%B8"><span class="toc-number">7.</span> <span class="toc-text">字典</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%A9%E6%96%AF%E5%AF%86%E7%A0%81"><span class="toc-number">7.1.</span> <span class="toc-text">摩斯密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AD%97%E5%85%B8"><span class="toc-number">7.2.</span> <span class="toc-text">创建字典</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%E5%AD%97%E5%85%B8"><span class="toc-number">7.3.</span> <span class="toc-text">快速初始化一个字典</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A2%9E"><span class="toc-number">7.3.1.</span> <span class="toc-text">增</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0"><span class="toc-number">7.3.2.</span> <span class="toc-text">删</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/uncategorized/C%E8%AF%AD%E8%A8%80%E6%A0%87%E5%87%86%E5%BA%93/" title="无题"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/uncategorized/C%E8%AF%AD%E8%A8%80%E6%A0%87%E5%87%86%E5%BA%93/" title="无题">无题</a><time datetime="2022-09-24T00:58:18.168Z" title="发表于 2022-09-24 08:58:18">2022-09-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/uncategorized/C%E5%B0%8F%E7%9F%A5%E8%AF%86/" title="无题"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/uncategorized/C%E5%B0%8F%E7%9F%A5%E8%AF%86/" title="无题">无题</a><time datetime="2022-09-23T09:04:33.200Z" title="发表于 2022-09-23 17:04:33">2022-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E4%B8%80%E7%BA%A7%E5%88%86%E7%B1%BB/C%E8%AF%AD%E8%A8%80/" title="C语言"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言"/></a><div class="content"><a class="title" href="/%E4%B8%80%E7%BA%A7%E5%88%86%E7%B1%BB/C%E8%AF%AD%E8%A8%80/" title="C语言">C语言</a><time datetime="2022-09-19T16:11:25.834Z" title="发表于 2022-09-20 00:11:25">2022-09-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/uncategorized/%E8%A7%A3%E9%87%8AC/" title="无题"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/uncategorized/%E8%A7%A3%E9%87%8AC/" title="无题">无题</a><time datetime="2022-09-19T16:03:25.049Z" title="发表于 2022-09-20 00:03:25">2022-09-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/uncategorized/C%E9%94%99%E9%A2%98/" title="无题"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/uncategorized/C%E9%94%99%E9%A2%98/" title="无题">无题</a><time datetime="2022-09-18T15:53:04.679Z" title="发表于 2022-09-18 23:53:04">2022-09-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Jinmu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
