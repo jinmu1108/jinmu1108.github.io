@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Hello World | Hello World</title><meta name="author" content="Jinmu"><meta name="copyright" content="Jinmu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="序列化与反序列化（看不懂qaq）序列化的概念将对象或者数组转化为可存储的字符串。 序列化的目的是方便数据的传输和存储，在PHP中，序列化和反序列化一般用做缓存，比如session缓存和cookie等。 1234567891011121314&lt;?php#创建一个类class test&amp;#123;    public $a &#x3D; &amp;#x27;sdfsdfa&amp;#x27;;    protected">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hello World">
+<meta property="og:url" content="https://jinmu1108.github.io/ctf/%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%EF%BC%88%E7%9C%8B%E4%B8%8D%E6%87%82qaq%EF%BC%89.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="序列化与反序列化（看不懂qaq）序列化的概念将对象或者数组转化为可存储的字符串。 序列化的目的是方便数据的传输和存储，在PHP中，序列化和反序列化一般用做缓存，比如session缓存和cookie等。 1234567891011121314&lt;?php#创建一个类class test&amp;#123;    public $a &#x3D; &amp;#x27;sdfsdfa&amp;#x27;;    protected">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-10-06T09:49:07.393Z">
+<meta property="article:modified_time" content="2022-10-03T08:19:25.487Z">
+<meta property="article:author" content="Jinmu">
+<meta name="twitter:card" content="summary"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://jinmu1108.github.io/ctf/%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%EF%BC%88%E7%9C%8B%E4%B8%8D%E6%87%82qaq%EF%BC%89"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hello World',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-10-03 16:19:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hello World</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">Hello World</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h1 id="序列化与反序列化（看不懂qaq）"><a href="#序列化与反序列化（看不懂qaq）" class="headerlink" title="序列化与反序列化（看不懂qaq）"></a>序列化与反序列化（看不懂qaq）</h1><h2 id="序列化的概念"><a href="#序列化的概念" class="headerlink" title="序列化的概念"></a>序列化的概念</h2><p><strong>将对象或者数组转化为可存储的字符串。</strong></p>
+<p>序列化的目的是方便数据的传输和存储，在PHP中，序列化和反序列化一般用做缓存，比如session缓存和cookie等。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">#创建一个类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$a</span> = <span class="string">&#x27;sdfsdfa&#x27;</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$b</span> = <span class="number">1111</span>;</span><br><span class="line">    <span class="keyword">private</span>  <span class="variable">$c</span> = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">displayVar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable language_">$this</span>-&gt;a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$d</span> = <span class="keyword">new</span> <span class="title function_ invoke__">test</span>(); <span class="comment">//实例化对象</span></span><br><span class="line"><span class="variable">$d</span> = <span class="title function_ invoke__">serialize</span>(<span class="variable">$d</span>);<span class="comment">//序列化对象</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$d</span>);<span class="comment">//输出序列化后的结果</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span>(<span class="number">73</span>) <span class="string">&quot;O:4:&quot;</span>test<span class="string">&quot;:3:&#123;s:1:&quot;</span>a<span class="string">&quot;;s:7:&quot;</span>sdfsdfa<span class="string">&quot;;s:4:&quot;</span>\<span class="number">000</span>*\<span class="number">000</span>b<span class="string">&quot;;i:1111;s:7:&quot;</span>\<span class="number">000</span>test\<span class="number">000</span>c<span class="string">&quot;;b:0;&#125;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>O:4:—代表O(object)代表对象类型，如果是a(array)那就是数组类型;4是对象名称的长度test是对象名称3代表有三个成员。</p>
+<p>s:1:”a”;s:7:”sdfsdfa”—第一个s表示变量名称是字符串类型，1是变量名称的长度，a是变量名称；第二个s代表变量值是字符串类型，7代表变量值的长，后面是变量的值。</p>
+<p><strong>s:4:”\000*\000b”;i:1111;—protected属性输出时一般需要url编码，若在本地存储更推荐采用base64编码的形式</strong></p>
+<p>序列化的时候格式是%00%00成员名*</p>
+<p>一个%00代表一个字节，所以protected有两个%00，在加上*和变量名称长度一共4个字节</p>
+<p><strong>s:7:”\000test\000c”;b:0;—private属性</strong></p>
+<p>private属性序列化的时候格式是%00类名%00成员名；</p>
+<p>两个%00加上类名的4个字节和成员名的一个字节就是7个字节</p>
+<p>serialize()函数只对类的<strong>属性</strong>序列化，不序列化<strong>方法</strong></p>
+<h2 id="反序列化的概念"><a href="#反序列化的概念" class="headerlink" title="反序列化的概念"></a>反序列化的概念</h2><p><strong>将序列化后的字符串转换回对象或者数组。</strong></p>
+<p>我们重新用上面的例子并把序列化的结果写入一个文本中存储：并读取内容进行反序列化</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$a</span> = <span class="string">&#x27;sdfsdfa&#x27;</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$b</span> = <span class="number">1111</span>;</span><br><span class="line">    <span class="keyword">private</span>  <span class="variable">$c</span> = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">displayVar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable language_">$this</span>-&gt;a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$d</span> = <span class="keyword">new</span> <span class="title function_ invoke__">test</span>();</span><br><span class="line"><span class="variable">$d</span> = <span class="title function_ invoke__">serialize</span>(<span class="variable">$d</span>);</span><br><span class="line"><span class="title function_ invoke__">file_put_contents</span>(<span class="string">&#x27;1.txt&#x27;</span>,<span class="variable">$d</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$d</span> = <span class="title function_ invoke__">unserialize</span>(<span class="title function_ invoke__">file_get_contents</span>(<span class="string">&#x27;1.txt&#x27;</span>));</span><br><span class="line"><span class="title function_ invoke__">print_r</span>(<span class="variable">$d</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$d</span>-&gt;a;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>反序列化的时候要保证有该类存在，因为没有序列化方法，所以我们反序列化回来还要依靠该类的方法进行</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$a</span> = <span class="string">&#x27;sdfsdfa&#x27;</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$b</span> = <span class="number">1111</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$c</span> = flase;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">displayVar90</span></span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable language_">$this</span>-&gt;a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$d</span> = <span class="title function_ invoke__">unserialize</span>(<span class="title function_ invoke__">file_get_contents</span>(<span class="string">&#x27;1.txr&#x27;</span>));</span><br><span class="line"><span class="title function_ invoke__">print_</span>(<span class="variable">$d</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$d</span>-&gt;a;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="反序列化漏洞的产生"><a href="#反序列化漏洞的产生" class="headerlink" title="反序列化漏洞的产生"></a>反序列化漏洞的产生</h2><p>为什么有反序列化的漏洞呢？</p>
+<p>用k0rz3n师傅解释很清晰了：</p>
+<blockquote>
+<p>PHP 反序列化漏洞又叫做 PHP 对象注入漏洞，是因为程序对输入数据处理不当导致的. 反序列化漏洞的成因在于代码中的 <strong>unserialize() 接收的参数可控</strong>，从上面的例子看，这个函数的<strong>参数是一个序列化的对象</strong>，而序列化的对象<strong>只含有对象的属性</strong>，那我们就要利用对<strong>对象属性的篡改</strong>实现最终的攻击。</p>
+</blockquote>
+<p>一句话讲晒就是： <strong>反序列化漏洞是由于unserialize函数接收到了恶意的序列化数据篡改成员属性后导致的。</strong></p>
+<h2 id="反序列化中常见的魔术方法"><a href="#反序列化中常见的魔术方法" class="headerlink" title="反序列化中常见的魔术方法"></a>反序列化中常见的魔术方法</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">__wakeup</span>()<span class="comment">//执行unserialize()时，先会调用这个函数</span></span><br><span class="line"><span class="title function_ invoke__">__sleep</span>()<span class="comment">//执行srialize()时，先会调用这个函数</span></span><br><span class="line"><span class="title function_ invoke__">__desruct</span>()<span class="comment">//对象被销毁时触发</span></span><br><span class="line"><span class="title function_ invoke__">__call</span>()<span class="comment">//在对象上下文中调用不可访问的方法时触发</span></span><br><span class="line"><span class="title function_ invoke__">__callStatic</span>() <span class="comment">//在静态上下文中调用不可访问的方法时触发</span></span><br><span class="line"><span class="title function_ invoke__">__get</span>() <span class="comment">//用于从不可访问的属性读取数据或者不存在这个键都会调用此方法</span></span><br><span class="line"><span class="title function_ invoke__">__set</span>() <span class="comment">//用于将数据写入不可访问的属性</span></span><br><span class="line"><span class="title function_ invoke__">__isset</span>() <span class="comment">//在不可访问的属性上调用isset()或empty()触发</span></span><br><span class="line"><span class="title function_ invoke__">__unset</span>() <span class="comment">//在不可访问的属性上使用unset()时触发</span></span><br><span class="line"><span class="title function_ invoke__">__toString</span>() <span class="comment">//把类当作字符串使用时触发</span></span><br><span class="line"><span class="title function_ invoke__">__invoke</span>() <span class="comment">//当尝试将对象调用为函数时触发</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="反序列化绕过"><a href="#反序列化绕过" class="headerlink" title="反序列化绕过"></a>反序列化绕过</h3><h4 id="php7-1-反序列化对类属性不敏感"><a href="#php7-1-反序列化对类属性不敏感" class="headerlink" title="php7.1+反序列化对类属性不敏感"></a>php7.1+反序列化对类属性不敏感</h4><p>如果变量前是protected，序列化结果会在变量名前加上\x00*\x00</p>
+<p>但在特定版本7.1以上则对于类属性不敏感，比如下面的例子即使没有\x00*\x00也依然会输出abc</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span></span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$a</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;a = <span class="string">&#x27;abc&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span>  <span class="title">__destruct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable language_">$this</span>-&gt;a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_ invoke__">unserialize</span>(<span class="string">&#x27;O:4:&quot;test&quot;:1:&#123;s:1:&quot;a&quot;;s:3:&quot;abc&quot;;&#125;&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="绕过-wakeup"><a href="#绕过-wakeup" class="headerlink" title="绕过__wakeup()"></a>绕过__wakeup()</h4><p>利用方式：当序列化字符串中表示对象属性个数的值大于真实的属性个数时会跳过__wakeup()的执行</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span></span>&#123;		<span class="comment">//设置一个类</span></span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$a</span>;		<span class="comment">//公有属性</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;	<span class="comment">//公有方法</span></span><br><span class="line">        <span class="variable language_">$this</span>-&gt;a = <span class="string">&#x27;abc&#x27;</span>;		<span class="comment">//引用a</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__wakeup</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;a=<span class="string">&#x27;666&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span>  <span class="title">__destruct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable language_">$this</span>-&gt;a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果执行<code>unserialize(&#39;O:4:&quot;test&quot;:1&#123;s:1:&quot;a&quot;;s:3:&quot;abc&quot;;&#125;&#39;);</code>输出结果为<code>666</code>.</p>
+<p>如果对象属性个数<strong>大于</strong>真实个数，执行<code>unserialize(&#39;O:4:&quot;test&quot;:2:&#123;s:1:&quot;a&quot;;s:3:&quot;abc&quot;;&#125;&#39;);</code>输出结果为abc</p>
+<h4 id="绕过部分正则"><a href="#绕过部分正则" class="headerlink" title="绕过部分正则"></a>绕过部分正则</h4><p><code>preg_match(&#39;/^O:\d+/&#39;)</code>匹配序列化字符串是否是对象字符串开头,</p>
+<ul>
+<li>利用加号绕过(url里传参时+要编码为%2B)&#x2F;<em>使用str_replace()</em>&#x2F;</li>
+<li>*<em>serialize(array(a)); &#x2F;<em>a为要反序列化的对象（序列化结果是a，不影响作为数组元素的$a的析构（结构？00））</em></em></li>
+</ul>
+<h4 id="利用引用（php的引用（就是在变量或者函数、对象等前面加上-amp-符号））"><a href="#利用引用（php的引用（就是在变量或者函数、对象等前面加上-amp-符号））" class="headerlink" title="利用引用（php的引用（就是在变量或者函数、对象等前面加上&amp;符号））"></a>利用引用（php的引用（就是在变量或者函数、对象等前面加上&amp;符号））</h4><p>PHP 的引用允许你用两个变量来指向同一个内容</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$a</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$b</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;a = <span class="string">&#x27;abc&#x27;</span>;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;b= &amp;<span class="variable language_">$this</span>-&gt;a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span>  <span class="title">__destruct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(<span class="variable language_">$this</span>-&gt;a===<span class="variable language_">$this</span>-&gt;b)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="number">666</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$a</span> = <span class="title function_ invoke__">serialize</span>(<span class="keyword">new</span> <span class="title function_ invoke__">test</span>());</span><br></pre></td></tr></table></figure>
+
+<h4 id="16进制绕过字符的过滤"><a href="#16进制绕过字符的过滤" class="headerlink" title="16进制绕过字符的过滤"></a>16进制绕过字符的过滤</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">O:<span class="number">4</span>:<span class="string">&quot;test&quot;</span>:<span class="number">2</span>:&#123;s:<span class="number">4</span>:<span class="string">&quot;%00*%00a&quot;</span>;s:<span class="number">3</span>:<span class="string">&quot;abc&quot;</span>;s:<span class="number">7</span>:<span class="string">&quot;%00test%00b&quot;</span>;s:<span class="number">3</span>:<span class="string">&quot;def&quot;</span>;&#125;</span><br><span class="line">可以写成</span><br><span class="line">O:<span class="number">4</span>:<span class="string">&quot;test&quot;</span>:<span class="number">2</span>:&#123;S:<span class="number">4</span>:<span class="string">&quot;\00*\00\61&quot;</span>;s:<span class="number">3</span>:<span class="string">&quot;abc&quot;</span>;s:<span class="number">7</span>:<span class="string">&quot;%00test%00b&quot;</span>;s:<span class="number">3</span>:<span class="string">&quot;def&quot;</span>;&#125;</span><br><span class="line">表示字符类型的s大写时，会被当成<span class="number">16</span>进制解析。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>22</p>
+<p>2</p>
+<p>56</p>
+<p>$test&#x3D;new xctf():<br>echo <strong>serialize</strong>($test):</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">xctf</span></span>&#123;</span><br><span class="line"><span class="keyword">public</span> <span class="variable">$flag</span> = <span class="string">&#x27;111&#x27;</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__wakeup</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="keyword">exit</span>(<span class="string">&#x27;bad requests&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line">?code=</span><br></pre></td></tr></table></figure>
+
+<h2 id="O-4-”xctf”-2-s-4-”flag”-s-3-”111”"><a href="#O-4-”xctf”-2-s-4-”flag”-s-3-”111”" class="headerlink" title="O:4:”xctf”:2:{s:4:”flag”;s:3:”111”;}"></a>O:4:”xctf”:2:{s:4:”flag”;s:3:”111”;}</h2><ul>
+<li><p>解释**O:**就是object的意思</p>
+</li>
+<li><p>**4:**是对象的函数名（class后面的）的占位</p>
+</li>
+<li><p>**”xctf”**对象的函数名</p>
+</li>
+<li><p>**:2:**表示对象里有2个变量</p>
+</li>
+<li><p>**:4:**变量名的占位</p>
+</li>
+<li><p>**”flag”**变量名</p>
+</li>
+<li><p>**; **   有一个分号</p>
+</li>
+<li><p>**s:**代表着string类型（还有个i代表int型）</p>
+</li>
+<li><p>**”111”**输出</p>
+</li>
+<li><p><em>protected属性序列化的时候格式是 %00</em>%00成员名 ；*</p>
+<p>一个%00代表一个字节，所以protected有两个%00，再加上*和变量名称长度一共是4个字节；</p>
+</li>
+<li><p><em>private属性序列化的时候格式是 %00类名%00成员名；</em></p>
+<p>这里也是有两个%002个字节加上类名的4个字节和变量名一个字节，加起来就是7个字节；</p>
+<p>下面的b代表着变量值是布尔型。</p>
+</li>
+<li><p>因为serialize()函数只对类的属性序列化，不序列化<strong>方法</strong>。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">#创建一个类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$a</span> = <span class="string">&#x27;sdfsdfa&#x27;</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$b</span> = <span class="number">1111</span>;</span><br><span class="line">    <span class="keyword">private</span>  <span class="variable">$c</span> = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">displayVar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable language_">$this</span>-&gt;a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$d</span> = <span class="keyword">new</span> <span class="title function_ invoke__">test</span>(); <span class="comment">//实例化对象</span></span><br><span class="line"><span class="variable">$d</span> = <span class="title function_ invoke__">serialize</span>(<span class="variable">$d</span>);<span class="comment">//序列化对象</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$d</span>);<span class="comment">//输出序列化后的结果</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>???<a href="">将其反序列化输出就是</a></p>
+<p>x<a href="">ctf Object([flag]&#x3D;&gt;111)</a>???</p>
+<p>****__wakeup()执行漏洞：一个字符串或对象被序列化后，如果其属性被修改，则不会执行****（为什么字符串本身不会出错）</p>
+<p><strong>O:4:”xctf”:1:{:4:”flag”;s:3:”111”;}<strong>改为</strong>O:4:”xctf”:2:{:4:”flag”;s:3:”111”;}</strong></p>
+<p>反序列化的知识：当被反序列化的字符串其中对应的对象的属性个数发生变化时，会导致反序列化失败而同时__wakeup也会失效，</p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jinmu</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/%E4%B8%80%E7%BA%A7%E5%88%86%E7%B1%BB/%E5%AD%A6%E4%B9%A0WEB/" title="web方向学习笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="web方向学习笔记"/></a><div class="content"><a class="title" href="/%E4%B8%80%E7%BA%A7%E5%88%86%E7%B1%BB/%E5%AD%A6%E4%B9%A0WEB/" title="web方向学习笔记">web方向学习笔记</a><time datetime="2022-10-12T04:57:58.000Z" title="发表于 2022-10-12 12:57:58">2022-10-12</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%B8%80%E7%BA%A7%E5%88%86%E7%B1%BB/"><span class="card-category-list-name">一级分类</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E6%A0%87%E7%AD%BE/" style="font-size: 1.1em; color: #999">标签</a> <a href="/tags/%E7%AC%AC%E4%BA%8C%E4%B8%AA%E6%A0%87%E7%AD%BE/" style="font-size: 1.1em; color: #999">第二个标签</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">1</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-10-12T04:58:28.187Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Jinmu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
