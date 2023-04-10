@@ -1,0 +1,295 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>CS-插件篇 | J1Nmu</title><meta name="author" content="Jinmu"><meta name="copyright" content="Jinmu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="CS-插件篇 参考文章: 1http:&amp;#x2F;&amp;#x2F;sleep.dashnine.org&amp;#x2F;download&amp;#x2F;sleep.jar Sleep环境的搭建  C2：Cobalt Strike，一款多人运动工具，常常使用再后渗透阶段   Aggressor Script：是C2 3.0以上版本的一个内置的脚本语言，他"><link rel="shortcut icon" href="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/liujin.jpg"><link rel="canonical" href="https://jinmu1108.github.io/%E6%B8%97%E9%80%8F/CS/%E6%8F%92%E4%BB%B6%E7%AF%87/%E5%85%8D%E6%9D%800x002-%E6%8F%92%E4%BB%B6%E7%AF%87/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CS-插件篇',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-10 18:24:47'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/liujin.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">54</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">J1Nmu</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CS-插件篇</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-10T10:28:42.089Z" title="发表于 2023-04-10 18:28:42">2023-04-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-10T10:24:47.387Z" title="更新于 2023-04-10 18:24:47">2023-04-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B8%97%E9%80%8F/CS/">CS</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B8%97%E9%80%8F/CS/%E6%8F%92%E4%BB%B6%E7%AF%87/">插件篇</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="CS-插件篇"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>CS-插件篇</h1>
+<p>参考文章:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://sleep.dashnine.org/download/sleep.jar</span><br></pre></td></tr></table></figure>
+<h2 id="Sleep环境的搭建">Sleep环境的搭建</h2>
+<blockquote>
+<p>C2：Cobalt Strike，一款多人运动工具，常常使用再后渗透阶段</p>
+</blockquote>
+<blockquote>
+<p>Aggressor Script：是C2 3.0以上版本的一个内置的脚本语言，他是由Sleep脚本解析，Sleep脚本目前国内是没有中文版本的，可能是因为使用的人不多，在在后面我会去把这个语言进行翻译；在CS 3.0 以上的版本，菜单、选项、事件、都有默认的default.cna构建。我们可以使用一些IRC、Webhook去对接机器人和监控，比如瞎子哥的Server上线监听，以及梼杌等插件的编写，所以本文也会在他们的代码基础上去解释一些东西</p>
+</blockquote>
+<p>由于 Aggressor Script是由Sleep解析的，所以我们先要安装一下这个语言的解释器，这个语言是基于Java的脚本语言</p>
+<p>Sleep语言下载地址：<a target="_blank" rel="noopener" href="http://sleep.dashnine.org/download/sleep.jar">http://sleep.dashnine.org/download/sleep.jar</a></p>
+<ul>
+<li>快速使用： <code>java -jar sleep.jar</code>:</li>
+</ul>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/640" alt="图片"></p>
+<ul>
+<li>输出 hello word：</li>
+</ul>
+<p>新建一个 cna 文件，cna是Aggressor Scrip脚本的后缀，然后在里面写：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">println(&quot;hello word&quot;);</span><br></pre></td></tr></table></figure>
+<h2 id="简介">简介</h2>
+<p>在 C4 中，我们可以打开 脚本控制台的控制台</p>
+<p>这里我们可以使用 help查看一些帮助信息： <img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/640.png" alt="640"></p>
+<p>下面是介绍：</p>
+<ul>
+<li>
+<p>? 进行一个简单的判断，返回值为True或者False，例如<code>? int(1) == int(2)</code>返回为False：!<img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/q.png" alt="q"></p>
+</li>
+<li>
+<p>e 执行我们写的代码，相当于交互模式，如果不加上 <code>e</code> 的话是无法执行的，例如 <code>e println(&quot;hello woed&quot;)</code>:</p>
+</li>
+</ul>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/fasdaf.png" alt="fasdaf"></p>
+<ul>
+<li>load 加载 cna 脚本： <code>load &lt;cna path&gt;</code>:</li>
+</ul>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/fadggsf.png" alt="fadggsf"></p>
+<p>这里加载的 cna 内容为</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/jjjj.png" alt="jjjj"><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/fadggsf.png" alt="fadggsf"></p>
+<p>意思是创建一个 command 名字为 w，当输入w的时候就打印hello word。</p>
+<ul>
+<li>
+<p>ls 现实我们目前加载的 cna 代码：<img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/eyrujhfg.png" alt="eyrujhfg"></p>
+</li>
+<li>
+<p>proff ：静止 cna 脚本运行Sleep的语法（不明白具体的作用）</p>
+</li>
+<li>
+<p>profile：统计 cna 脚本使用了哪些 Sleep的语法： <img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/ffsaffa.png" alt="ffsaffa"></p>
+</li>
+<li>
+<p>pron 机翻：运行 cna 脚本运行Sleep的语法</p>
+</li>
+<li>
+<p>reload：重新加载 cna脚本，还是用我们刚刚的脚本举例： 我先修改 cna 中的内容： <img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/ggsdf.png" alt="ggsdf"></p>
+</li>
+</ul>
+<p>在到 控制台输入一下：</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/gggsddfa.png" alt="gggsddfa"></p>
+<p>没有改变，我们重载一下在运行：<img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/hhfgs.png" alt="hhfgs"></p>
+<ul>
+<li>
+<p>troff： 关闭函数跟踪，也就是我们不显示函数运行的具体情况：</p>
+</li>
+<li>
+<p>tron: 开启函数跟踪，显示我们运行时的具体情况： <img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/fasfasd.png" alt="fasfasd"></p>
+</li>
+</ul>
+<p>发现我们运行的情况，在1.cna的第三行，我们输出 hello my friend</p>
+<ul>
+<li>x：执行一个计算，比如1+1什么的，这里需要注意，两个数字之间需要间隔开，不然会报错：<img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/sasdawr.png" alt="sasdawr"></li>
+</ul>
+<h2 id="Sleep快速入门">Sleep快速入门</h2>
+<ul>
+<li>数字</li>
+<li>字符串</li>
+<li>Arrays</li>
+<li>Lists</li>
+<li>Stacks</li>
+<li>Sets</li>
+<li>Hashs</li>
+</ul>
+<p>这是他的数据类型，首先我们要注意的是，他的格式是一定需要带上空格的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$name = &quot;kris&quot;; # 字符串变量的命名</span><br><span class="line">$age = 18; # 数字型变量命名</span><br><span class="line"></span><br><span class="line">Arrays类型：</span><br><span class="line">@user_list = @(&quot;kris&quot;,18,&quot;四川&quot;,&quot;单身&quot;); # Sleep的阵列（列表）是类似python的那种任何元素的集合，不需要元素的类型统一</span><br><span class="line">										也即是一种复合数据类型。</span><br><span class="line">println(@name_list[0]); # 下标输出信息</span><br><span class="line"> </span><br><span class="line">Hashs类型</span><br><span class="line">%dict[&quot;name&quot;] = &quot;kris&quot;;</span><br><span class="line">%dict[&quot;age&quot;] = 18;</span><br><span class="line">%dict[&quot;address&quot;] = &quot;sichuan&quot;; # 使用%号创建，有点和python的字典类似</span><br><span class="line">    </span><br><span class="line">println(&quot;Dict is &quot;.%dict);</span><br></pre></td></tr></table></figure>
+<h3 id="Arrays">Arrays</h3>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/ggsdfsadf.png" alt="ggsdfsadf"></p>
+<p>这样可以对列表中的元素进行输出。格式话输出的语法是使用 <code>.</code> 进行拼接</p>
+<h3 id="Hashs">Hashs</h3>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/fasdsasa.png" alt="fasdsasa"></p>
+<h3 id="遍历">遍历</h3>
+<p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@name_list = @(&#x27;kris&#x27;,18,&#x27;sichuan&#x27;);</span><br><span class="line">foreach $var (@name_list)</span><br><span class="line">&#123;</span><br><span class="line">   println($var);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/fasddas.png" alt="fasddas"></p>
+<h3 id="Push">Push</h3>
+<p>这个类似我们的python中的append方法，在列表的最后面添加数据：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@names = @(&quot;Hellen&quot;,&quot;Abao&quot;);</span><br><span class="line">push(@names,&quot;kris&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(&quot;name :&quot;.@names);</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/asfsad.png" alt="asfsad"></p>
+<h2 id="彩色输出">彩色输出</h2>
+<p>简单的来说就是让我们的控制台输出一个带颜色的字体：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">println(&quot;\c0This is my color&quot;);</span><br><span class="line">println(&quot;\c1This is my color&quot;); # 这是黑色</span><br><span class="line">println(&quot;\c2This is my color&quot;);</span><br><span class="line">println(&quot;\c3This is my color&quot;);</span><br><span class="line">println(&quot;\c4This is my color&quot;);</span><br><span class="line">println(&quot;\c5This is my color&quot;);</span><br><span class="line">println(&quot;\c6This is my color&quot;);</span><br><span class="line">println(&quot;\c7This is my color&quot;);</span><br><span class="line">println(&quot;\c8This is my color&quot;);</span><br><span class="line">println(&quot;\c9This is my color&quot;);</span><br><span class="line">println(&quot;\cAThis is my color&quot;);</span><br><span class="line">println(&quot;\cBThis is my color&quot;);</span><br><span class="line">println(&quot;\cCThis is my color&quot;);</span><br><span class="line">println(&quot;\cDThis is my color&quot;);</span><br><span class="line">println(&quot;\cEThis is my color&quot;);</span><br><span class="line">println(&quot;\cFThis is my color&quot;);</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/f1sdfasd.png" alt="f1sdfasd"></p>
+<p>在3.0版本以上，客户端界面的大部分东西都是使用 deafult.cna 构建出来的，菜单、默认按钮，包括我们日常上线的时候 Event log 的格式化输出。接下来我们就一一介绍</p>
+<h3 id="键盘快捷键">键盘快捷键</h3>
+<p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bind &lt;想绑定的组合键&gt;</span><br><span class="line">	&#123;</span><br><span class="line">		按下快捷键执行的命名;	</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>我们绑定一个来试试看：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bind Ctrl+H &#123;</span><br><span class="line">	show_message(&quot;使用键盘快捷键哦！&quot;); # 弹窗显示我们的消息</span><br><span class="line">	elog(&quot;使用了快捷键！&quot;); # 在 Event Log位置显示信息</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/assdff.png" alt="assdff"></p>
+<h3 id="菜单编写">菜单编写</h3>
+<p>菜单就是下面这样的东西：</p>
+<p>我们可以自己定义想要的菜单或者将我们的二级菜单添加到已经存在的主菜单下，创建自定义菜单语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">popup &lt;菜单函数名&gt;&#123;</span><br><span class="line">	        item(&quot;&amp;&lt;二级菜单显示&gt;&quot;, &#123;点击时执行的代码，或者函数&#125;); # 第一个子菜单</span><br><span class="line">        	separator(); #分割线</span><br><span class="line">        	item(&quot;&amp;&lt;二级菜单名字&gt;&quot;, &#123;点击时执行的代码，或者函数&#125;); # 第二个子菜单</span><br><span class="line">        	separator(); #分割线</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">menubar(&quot;一级菜单显示名&quot;, &quot;菜单函数名&quot;);</span><br></pre></td></tr></table></figure>
+<p>我们现在定义一个简单的菜单：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">popup my_help&#123;</span><br><span class="line">	item(&quot;&amp;这是百度&quot;,&#123;url_open(&quot;http://www.baidu.com&quot;)&#125;);</span><br><span class="line">	separator();</span><br><span class="line">	item(&quot;&amp;这是谷歌&quot;,&#123;url_open(&quot;http://www.google.com&quot;)&#125;); # url_open()这个函数是用来打开网站的</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">menubar(&quot;帮助菜单&quot;, &quot;my_help&quot;); # 菜单函数，一定要加上</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/fasdsadsad.png" alt="fasdsadsad"></p>
+<p>当我们点击以后，会直接打开百度的链接</p>
+<p>果我们并不想创建新的菜单，而是想在默认的菜单上增加，我们可以这样做：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">popup help&#123;</span><br><span class="line">	item(&quot;&amp;关于汉化&quot;,&#123;show_message(&quot;4.1汉化 by XXX &quot;)&#125;);</span><br><span class="line">	separator();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/sdaasff.png" alt="sdaasff"></p>
+<p>这样我们就在与原有的基础上加上了一个关于汉化的提示，这里我们是加载外部的 cna ，你可以修改默认的 default.cna来添加自己的信息。</p>
+<ul>
+<li>
+<p>右键菜单的选择</p>
+<p>除了上面说的那样的菜单，我们还会在点击右键的时候打开菜单，如下所示：<img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/asdfff.png" alt="asdfff"></p>
+</li>
+</ul>
+<p>创建这样的菜单我们的语法为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">popup beacon_bottom&#123;</span><br><span class="line">    	item(&quot;&amp;关于作者&quot;, &#123; url_open(&quot;https://wgpsec.org&quot;); &#125;);</span><br><span class="line">        	&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/asddsasdadd.png" alt="asddsasdadd"></p>
+<p>我们在任何的菜单里面都可以嵌套菜单，就整出一个多级菜单的样子，我们把上面的代码进行修改</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">popup beacon_bottom&#123;</span><br><span class="line">	menu &quot;关于作者&quot;&#123;</span><br><span class="line">    	item(&quot;&amp;博客&quot;, &#123; url_open(&quot;https://wgpsec.org&quot;); &#125;);</span><br><span class="line">		item(&quot;&amp;QQ&quot;, &#123; show_message(&quot;1574991635&quot;); &#125;);</span><br><span class="line">        	&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/ds1d.png" alt="ds1d"></p>
+<p>多级菜单就是多了一个<code>menu &quot;右键显示的信息&quot;&#123;&#125;</code> 的写法，这里和上面菜单编写最大的区别就是没有<code>menubar</code>的写法，因为我们是直接在右键菜单上进行修改的，也就是原有菜单上修改</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://jinmu1108.github.io">Jinmu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://jinmu1108.github.io/%E6%B8%97%E9%80%8F/CS/%E6%8F%92%E4%BB%B6%E7%AF%87/%E5%85%8D%E6%9D%800x002-%E6%8F%92%E4%BB%B6%E7%AF%87/">https://jinmu1108.github.io/%E6%B8%97%E9%80%8F/CS/%E6%8F%92%E4%BB%B6%E7%AF%87/%E5%85%8D%E6%9D%800x002-%E6%8F%92%E4%BB%B6%E7%AF%87/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://jinmu1108.github.io" target="_blank">J1Nmu</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%8F%92%E4%BB%B6%E7%AF%87/">插件篇</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/%E6%B8%97%E9%80%8F/CS/%E8%BF%9B%E9%98%B6/%E5%85%8D%E6%9D%800x003-CS%E8%BF%9B%E9%98%B6/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">CS-进阶</div></div></a></div><div class="next-post pull-right"><a href="/%E6%B8%97%E9%80%8F/CS/unicorn/%E5%85%8D%E6%9D%800x001-unicorn/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">CS-unicorn</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/liujin.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jinmu</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">54</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jinmu1108"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">CS-插件篇</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Sleep%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA"><span class="toc-number">1.1.</span> <span class="toc-text">Sleep环境的搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.2.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sleep%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8"><span class="toc-number">1.3.</span> <span class="toc-text">Sleep快速入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Arrays"><span class="toc-number">1.3.1.</span> <span class="toc-text">Arrays</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hashs"><span class="toc-number">1.3.2.</span> <span class="toc-text">Hashs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%8D%E5%8E%86"><span class="toc-number">1.3.3.</span> <span class="toc-text">遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Push"><span class="toc-number">1.3.4.</span> <span class="toc-text">Push</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA"><span class="toc-number">1.4.</span> <span class="toc-text">彩色输出</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%AE%E7%9B%98%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">1.4.1.</span> <span class="toc-text">键盘快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8F%9C%E5%8D%95%E7%BC%96%E5%86%99"><span class="toc-number">1.4.2.</span> <span class="toc-text">菜单编写</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/%E8%93%9D%E9%98%9F/windows%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/%E8%93%9D%E9%98%9F-windows%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" title="蓝队"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="蓝队"/></a><div class="content"><a class="title" href="/%E8%93%9D%E9%98%9F/windows%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/%E8%93%9D%E9%98%9F-windows%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" title="蓝队">蓝队</a><time datetime="2023-04-10T10:28:42.094Z" title="发表于 2023-04-10 18:28:42">2023-04-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E6%B8%97%E9%80%8F/CS/%E8%BF%9B%E9%98%B6/CS-%E6%B8%97%E9%80%8F/" title="CS-渗透"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CS-渗透"/></a><div class="content"><a class="title" href="/%E6%B8%97%E9%80%8F/CS/%E8%BF%9B%E9%98%B6/CS-%E6%B8%97%E9%80%8F/" title="CS-渗透">CS-渗透</a><time datetime="2023-04-10T10:28:42.093Z" title="发表于 2023-04-10 18:28:42">2023-04-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E6%B8%97%E9%80%8F/CS/%E9%82%AE%E4%BB%B6%E9%92%93%E9%B1%BC/CS%E9%92%93%E9%B1%BC%E9%82%AE%E4%BB%B6%E6%94%BB%E5%87%BB/" title="CS邮件钓鱼攻击"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CS邮件钓鱼攻击"/></a><div class="content"><a class="title" href="/%E6%B8%97%E9%80%8F/CS/%E9%82%AE%E4%BB%B6%E9%92%93%E9%B1%BC/CS%E9%92%93%E9%B1%BC%E9%82%AE%E4%BB%B6%E6%94%BB%E5%87%BB/" title="CS邮件钓鱼攻击">CS邮件钓鱼攻击</a><time datetime="2023-04-10T10:28:42.091Z" title="发表于 2023-04-10 18:28:42">2023-04-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E6%B8%97%E9%80%8F/CS/%E5%91%BD%E4%BB%A4%E7%AF%87/CS-LSTAR/" title="CS-命令篇"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CS-命令篇"/></a><div class="content"><a class="title" href="/%E6%B8%97%E9%80%8F/CS/%E5%91%BD%E4%BB%A4%E7%AF%87/CS-LSTAR/" title="CS-命令篇">CS-命令篇</a><time datetime="2023-04-10T10:28:42.090Z" title="发表于 2023-04-10 18:28:42">2023-04-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E6%B8%97%E9%80%8F/CS/%E8%BF%9B%E9%98%B6/%E5%85%8D%E6%9D%800x003-CS%E8%BF%9B%E9%98%B6/" title="CS-进阶"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CS-进阶"/></a><div class="content"><a class="title" href="/%E6%B8%97%E9%80%8F/CS/%E8%BF%9B%E9%98%B6/%E5%85%8D%E6%9D%800x003-CS%E8%BF%9B%E9%98%B6/" title="CS-进阶">CS-进阶</a><time datetime="2023-04-10T10:28:42.089Z" title="发表于 2023-04-10 18:28:42">2023-04-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Jinmu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
