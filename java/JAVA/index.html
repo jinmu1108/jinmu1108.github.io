@@ -1,0 +1,314 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>JAVA | J1Nmu</title><meta name="author" content="Jinmu"><meta name="copyright" content="Jinmu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="JAVA IDEA项目结构 project-&amp;gt;module-&amp;gt;package-&amp;gt;class JDK和JRE  注释和关键字  变量  数据类型   标识符   IDEA shift+F6重命名 delete删除 算术运算符  赋值运算符  关系运算符  逻辑运算符  短路逻辑运算符"><link rel="shortcut icon" href="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/liujin.jpg"><link rel="canonical" href="https://jinmu1108.github.io/JAVA/JAVA/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'JAVA',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-25 15:25:23'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/liujin.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">46</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">55</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">J1Nmu</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">JAVA</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-07T14:56:22.393Z" title="发表于 2023-09-07 22:56:22">2023-09-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-25T07:25:23.394Z" title="更新于 2023-05-25 15:25:23">2023-05-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/JAVA/">JAVA</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">608</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="JAVA"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>JAVA</h1>
+<p><strong>IDEA项目结构</strong></p>
+<p>project-&gt;module-&gt;package-&gt;class</p>
+<h2 id="JDK和JRE">JDK和JRE</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230518232017444.png" alt="image-20230518232017444"></p>
+<h2 id="注释和关键字">注释和关键字</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519102127544.png" alt="image-20230519102127544"></p>
+<h2 id="变量">变量</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519112715822.png" alt="image-20230519112715822"></p>
+<h2 id="数据类型">数据类型</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519145507610.png" alt="image-20230519145507610"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519145453824.png" alt="image-20230519145453824"></p>
+<h2 id="标识符">标识符</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519152149947.png" alt="image-20230519152149947"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519152408260.png" alt="image-20230519152408260"></p>
+<h2 id="IDEA">IDEA</h2>
+<p>shift+F6重命名</p>
+<p>delete删除</p>
+<h2 id="算术运算符">算术运算符</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519172937038.png" alt="image-20230519172937038"></p>
+<h2 id="赋值运算符">赋值运算符</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519184613255.png" alt="image-20230519184613255"></p>
+<h2 id="关系运算符">关系运算符</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519184707681.png" alt="image-20230519184707681"></p>
+<h2 id="逻辑运算符">逻辑运算符</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519191732860.png" alt="image-20230519191732860"></p>
+<h2 id="短路逻辑运算符">短路逻辑运算符</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519191955603.png" alt="image-20230519191955603"></p>
+<h2 id="三元运算符">三元运算符</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519193752156.png" alt="image-20230519193752156"></p>
+<h2 id="运算符优先级">运算符优先级</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519193948289.png" alt="image-20230519193948289"></p>
+<h2 id="原码">原码</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519194229841.png" alt="image-20230519194229841"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519194440567.png" alt="image-20230519194440567"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519194825078.png" alt="image-20230519194825078"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519195145254.png" alt="image-20230519195145254"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519214058420.png" alt="image-20230519214058420"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519214125651.png" alt="image-20230519214125651"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519214139364.png" alt="image-20230519214139364"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519214246637.png" alt="image-20230519214246637"></p>
+<h2 id="其他的运算符">其他的运算符</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519214910327.png" alt="image-20230519214910327"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519215412173.png" alt="image-20230519215412173"></p>
+<p>左移变小,右移变大</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519215544435.png" alt="image-20230519215544435"></p>
+<h2 id="流程控制语句">流程控制语句</h2>
+<h3 id="顺序结构">顺序结构</h3>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519215727519.png" alt="image-20230519215727519"></p>
+<h3 id="分支结构">分支结构</h3>
+<h4 id="if语句">if语句</h4>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519221357851.png" alt="image-20230519221357851"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519221329004.png" alt="image-20230519221329004"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519221442882.png" alt="image-20230519221442882"></p>
+<h4 id="switch语句格式">switch语句格式</h4>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519221739487.png" alt="image-20230519221739487"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519222155180.png" alt="image-20230519222155180"></p>
+<h5 id="default的位置和省略">default的位置和省略</h5>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519223218689.png" alt="image-20230519223218689"></p>
+<h5 id="case穿透">case穿透</h5>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519223531079.png" alt="image-20230519223531079"></p>
+<h5 id="switch新特性">switch新特性</h5>
+<p>jdk12之后</p>
+<p>使用箭头的形式,简化</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519223809038.png" alt="image-20230519223809038"></p>
+<h5 id="switch和if第三种格式各自的使用场景">switch和if第三种格式各自的使用场景</h5>
+<h2 id="循环结构">循环结构</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519231417267.png" alt="image-20230519231417267"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519231444142.png" alt="image-20230519231444142"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230519231805326.png" alt="image-20230519231805326"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230520002332619.png" alt="image-20230520002332619"></p>
+<h2 id="数组">数组</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">package com.itheima.dome1;</span><br><span class="line">import java.util.Random;</span><br><span class="line">public class Dome1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Random r = new Random();</span><br><span class="line">        int x = r.nextInt(1,101);</span><br><span class="line">        int[] arr1 = new int[] &#123;1,2,3,45,6&#125;;</span><br><span class="line">        int[] arr2 = &#123;1,2,3,45,5&#125;;</span><br><span class="line"></span><br><span class="line">        String[] arr3 = new String[] &#123;&quot;aa&quot;,&quot;bb&quot;,&quot;cc&quot;&#125;;</span><br><span class="line">        String[] arr4 = &#123;&quot;aa&quot;,&quot;cc&quot;,&quot;bb&quot;&#125;;</span><br><span class="line"></span><br><span class="line">        double[] arr5 = new double[] &#123;1.01,2.3&#125;;</span><br><span class="line">        double[] arr6 =  &#123;1.22,3.33&#125;;</span><br><span class="line">        System.out.println(arr1);</span><br><span class="line">        System.out.println(arr2);</span><br><span class="line">        System.out.println(arr3);</span><br><span class="line">        System.out.println(arr4);</span><br><span class="line">        System.out.println(arr5);</span><br><span class="line">        System.out.println(arr6);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//[I@3b07d329</span><br><span class="line">//[I@41629346</span><br><span class="line">//[Ljava.lang.String;@404b9385</span><br><span class="line">//[Ljava.lang.String;@6d311334</span><br><span class="line">//[D@682a0b20</span><br><span class="line">//[D@3d075dc0</span><br></pre></td></tr></table></figure>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230520130923438.png" alt="image-20230520130923438"></p>
+<h2 id="数组的内存图">数组的内存图</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230520150459899.png" alt="image-20230520150459899"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230520150908487.png" alt="image-20230520150908487"></p>
+<h2 id="什么是方法">什么是方法</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230520154355543.png" alt="image-20230520154355543"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230520162030734.png" alt="image-20230520162030734"></p>
+<h2 id="方法的重载">方法的重载</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230520162731698.png" alt="image-20230520162731698"></p>
+<h2 id="方法调用的基本内存原理">方法调用的基本内存原理</h2>
+<p>黑马程序员71</p>
+<h2 id="二维数组的静态初始化">二维数组的静态初始化</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230520234457622.png" alt="image-20230520234457622"></p>
+<h2 id="面向对象">面向对象</h2>
+<h3 id="如何定义类">如何定义类</h3>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230521140625341.png" alt="image-20230521140625341"></p>
+<h3 id="面向对象-类和对象">面向对象-类和对象</h3>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230521141425750.png" alt="image-20230521141425750"></p>
+<h3 id="面向对象-定义类的补充注意事项">面向对象-定义类的补充注意事项</h3>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230521141511572.png" alt="image-20230521141511572"></p>
+<h4 id="Javabean类">Javabean类</h4>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230521141624315.png" alt="image-20230521141624315"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230521141719874.png" alt="image-20230521141719874"></p>
+<h2 id="面向对象-封装">面向对象-封装</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230521164548933.png" alt="image-20230521164548933"></p>
+<h2 id="面向对象-就近原则和this关键字">面向对象-就近原则和this关键字</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230521173112892.png" alt="image-20230521173112892"></p>
+<h2 id="面向对象-构造方法">面向对象-构造方法</h2>
+<h3 id="构造方法的格式">构造方法的格式</h3>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230521173232441.png" alt="image-20230521173232441"></p>
+<h3 id="构造方法的注意事项">构造方法的注意事项</h3>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230521174301991.png" alt="image-20230521174301991"></p>
+<h3 id="小结">小结</h3>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230521174349639.png" alt="image-20230521174349639"></p>
+<h2 id="面向对象-标准的JavaBean类">面向对象-标准的JavaBean类</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230521180024299.png" alt="image-20230521180024299"></p>
+<p>快捷键:</p>
+<p><strong>alt+insert</strong></p>
+<p>插件 ptg</p>
+<h2 id="面向对象-内存图">面向对象-内存图</h2>
+<h3 id="两个对象">两个对象</h3>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230521182754884.png" alt="image-20230521182754884"></p>
+<h3 id="两个引用指向同一个对象">两个引用指向同一个对象</h3>
+<h2 id="面向对象-基本数据类型-引用数据类型">面向对象-基本数据类型 引用数据类型</h2>
+<h3 id="基本数据类型">基本数据类型</h3>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230521185804445.png" alt="image-20230521185804445"></p>
+<h3 id="引用数据类型">引用数据类型</h3>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230521190025392.png" alt="image-20230521190025392"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230521190003147.png" alt="image-20230521190003147"></p>
+<h2 id="面向对象-成员变量和局部变量">面向对象-成员变量和局部变量</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230521191652437.png" alt="image-20230521191652437"></p>
+<h2 id="数组练习">数组练习</h2>
+<p><img src="C:%5CUsers%5C29506%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20230521232438380.png" alt="image-20230521232438380"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第一套体系 遇到空格,制表符 回车会停止接受</span><br><span class="line"></span><br><span class="line">第二套体系 可以接受空格,制表符 遇到回车会停止接受 </span><br></pre></td></tr></table></figure>
+<h2 id="API和API帮助文档">API和API帮助文档</h2>
+<h3 id="API">API</h3>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230522110818479.png" alt="image-20230522110818479"></p>
+<p>比如 Scanner  Random</p>
+<h2 id="创建String对象的方式">创建String对象的方式</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230522112852126.png" alt="image-20230522112852126"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230522113316723.png" alt="image-20230522113316723"></p>
+<h2 id="Java内存模型">Java内存模型</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230522113653795.png" alt="image-20230522113653795"></p>
+<p>利用<code>equals</code>比较,区分大小写</p>
+<p>利用<code>equalsIgnoreCase</code>比较,不区分大小写</p>
+<h2 id="StringBuilder类">StringBuilder类</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230522202720218.png" alt="image-20230522202720218"></p>
+<h2 id="StringJoiner类">StringJoiner类</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230522204211726.png" alt="image-20230522204211726"></p>
+<h2 id="字符串的原理">字符串的原理</h2>
+<p>预估</p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230522235608738.png" alt="image-20230522235608738"></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230523000100573.png" alt=""></p>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230523000225647.png" alt="image-20230523000225647"></p>
+<h2 id="集合">集合</h2>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230523002121594.png" alt="image-20230523002121594"></p>
+<h1>Static</h1>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230525141605364.png" alt="image-20230525141605364"></p>
+<h1>继承</h1>
+<p><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/image-20230525152522081.png" alt="image-20230525152522081"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://jinmu1108.github.io">Jinmu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://jinmu1108.github.io/JAVA/JAVA/">https://jinmu1108.github.io/JAVA/JAVA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://jinmu1108.github.io" target="_blank">J1Nmu</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JAVA/">JAVA</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E4%BA%94)/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">ATT&amp;CK(五)</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://jinmu-1313986858.cos.ap-beijing.myqcloud.com/liujin.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jinmu</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">46</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">55</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jinmu1108"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">JAVA</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK%E5%92%8CJRE"><span class="toc-number">1.1.</span> <span class="toc-text">JDK和JRE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A%E5%92%8C%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.2.</span> <span class="toc-text">注释和关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.4.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="toc-number">1.5.</span> <span class="toc-text">标识符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDEA"><span class="toc-number">1.6.</span> <span class="toc-text">IDEA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.7.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.8.</span> <span class="toc-text">赋值运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.</span> <span class="toc-text">关系运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.10.</span> <span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%AD%E8%B7%AF%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.11.</span> <span class="toc-text">短路逻辑运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.12.</span> <span class="toc-text">三元运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.13.</span> <span class="toc-text">运算符优先级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%A0%81"><span class="toc-number">1.14.</span> <span class="toc-text">原码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.15.</span> <span class="toc-text">其他的运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.16.</span> <span class="toc-text">流程控制语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="toc-number">1.16.1.</span> <span class="toc-text">顺序结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84"><span class="toc-number">1.16.2.</span> <span class="toc-text">分支结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#if%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.16.2.1.</span> <span class="toc-text">if语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#switch%E8%AF%AD%E5%8F%A5%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.16.2.2.</span> <span class="toc-text">switch语句格式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#default%E7%9A%84%E4%BD%8D%E7%BD%AE%E5%92%8C%E7%9C%81%E7%95%A5"><span class="toc-number">1.16.2.2.1.</span> <span class="toc-text">default的位置和省略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#case%E7%A9%BF%E9%80%8F"><span class="toc-number">1.16.2.2.2.</span> <span class="toc-text">case穿透</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#switch%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-number">1.16.2.2.3.</span> <span class="toc-text">switch新特性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#switch%E5%92%8Cif%E7%AC%AC%E4%B8%89%E7%A7%8D%E6%A0%BC%E5%BC%8F%E5%90%84%E8%87%AA%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.16.2.2.4.</span> <span class="toc-text">switch和if第三种格式各自的使用场景</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="toc-number">1.17.</span> <span class="toc-text">循环结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">1.18.</span> <span class="toc-text">数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%BE"><span class="toc-number">1.19.</span> <span class="toc-text">数组的内存图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%96%B9%E6%B3%95"><span class="toc-number">1.20.</span> <span class="toc-text">什么是方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD"><span class="toc-number">1.21.</span> <span class="toc-text">方法的重载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AD%98%E5%8E%9F%E7%90%86"><span class="toc-number">1.22.</span> <span class="toc-text">方法调用的基本内存原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E9%9D%99%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.23.</span> <span class="toc-text">二维数组的静态初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.24.</span> <span class="toc-text">面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89%E7%B1%BB"><span class="toc-number">1.24.1.</span> <span class="toc-text">如何定义类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.24.2.</span> <span class="toc-text">面向对象-类和对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%AE%9A%E4%B9%89%E7%B1%BB%E7%9A%84%E8%A1%A5%E5%85%85%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.24.3.</span> <span class="toc-text">面向对象-定义类的补充注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Javabean%E7%B1%BB"><span class="toc-number">1.24.3.1.</span> <span class="toc-text">Javabean类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%B0%81%E8%A3%85"><span class="toc-number">1.25.</span> <span class="toc-text">面向对象-封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%B0%B1%E8%BF%91%E5%8E%9F%E5%88%99%E5%92%8Cthis%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.26.</span> <span class="toc-text">面向对象-就近原则和this关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-number">1.27.</span> <span class="toc-text">面向对象-构造方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.27.1.</span> <span class="toc-text">构造方法的格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.27.2.</span> <span class="toc-text">构造方法的注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">1.27.3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E6%A0%87%E5%87%86%E7%9A%84JavaBean%E7%B1%BB"><span class="toc-number">1.28.</span> <span class="toc-text">面向对象-标准的JavaBean类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%86%85%E5%AD%98%E5%9B%BE"><span class="toc-number">1.29.</span> <span class="toc-text">面向对象-内存图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.29.1.</span> <span class="toc-text">两个对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E5%BC%95%E7%94%A8%E6%8C%87%E5%90%91%E5%90%8C%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.29.2.</span> <span class="toc-text">两个引用指向同一个对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.30.</span> <span class="toc-text">面向对象-基本数据类型 引用数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.30.1.</span> <span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.30.2.</span> <span class="toc-text">引用数据类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-number">1.31.</span> <span class="toc-text">面向对象-成员变量和局部变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%BB%83%E4%B9%A0"><span class="toc-number">1.32.</span> <span class="toc-text">数组练习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API%E5%92%8CAPI%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3"><span class="toc-number">1.33.</span> <span class="toc-text">API和API帮助文档</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#API"><span class="toc-number">1.33.1.</span> <span class="toc-text">API</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAString%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">1.34.</span> <span class="toc-text">创建String对象的方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.35.</span> <span class="toc-text">Java内存模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringBuilder%E7%B1%BB"><span class="toc-number">1.36.</span> <span class="toc-text">StringBuilder类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringJoiner%E7%B1%BB"><span class="toc-number">1.37.</span> <span class="toc-text">StringJoiner类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">1.38.</span> <span class="toc-text">字符串的原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E5%90%88"><span class="toc-number">1.39.</span> <span class="toc-text">集合</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Static</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">继承</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/JAVA/JAVA/" title="JAVA"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JAVA"/></a><div class="content"><a class="title" href="/JAVA/JAVA/" title="JAVA">JAVA</a><time datetime="2023-09-07T14:56:22.393Z" title="发表于 2023-09-07 22:56:22">2023-09-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E4%BA%94)/" title="ATT&amp;CK(五)"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ATT&amp;CK(五)"/></a><div class="content"><a class="title" href="/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E4%BA%94)/" title="ATT&amp;CK(五)">ATT&amp;CK(五)</a><time datetime="2023-08-19T08:59:17.051Z" title="发表于 2023-08-19 16:59:17">2023-08-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E5%9B%9B)/" title="ATT&amp;CK(四)"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ATT&amp;CK(四)"/></a><div class="content"><a class="title" href="/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E5%9B%9B)/" title="ATT&amp;CK(四)">ATT&amp;CK(四)</a><time datetime="2023-08-18T02:50:42.083Z" title="发表于 2023-08-18 10:50:42">2023-08-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E4%B8%89)/" title="ATT&amp;CK(三)"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ATT&amp;CK(三)"/></a><div class="content"><a class="title" href="/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E4%B8%89)/" title="ATT&amp;CK(三)">ATT&amp;CK(三)</a><time datetime="2023-05-16T03:30:48.923Z" title="发表于 2023-05-16 11:30:48">2023-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E4%BA%8C)/" title="ATT&amp;CK(二)"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ATT&amp;CK(二)"/></a><div class="content"><a class="title" href="/%E9%9D%B6%E5%9C%BA/ATT-CK/ATT&amp;CK(%E4%BA%8C)/" title="ATT&amp;CK(二)">ATT&amp;CK(二)</a><time datetime="2023-05-14T02:50:44.342Z" title="发表于 2023-05-14 10:50:44">2023-05-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Jinmu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
